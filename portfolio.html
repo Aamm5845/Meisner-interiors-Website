@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Your Interior Design Firm</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="description" content="Explore our portfolio of luxury interior design projects including residential homes, commercial spaces, and heritage properties.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="portfolio-page">
+    <!-- Header Navigation -->
+    <header id="header" class="header-dark">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-placeholder">
+                        <h2>Your Design Studio</h2>
+                    </div>
+                </a>
+                
+                <div class="nav-menu">
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="hero-background" style="background-image: url('images/portfolio-hero.jpg');">
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="container">
+                    <span class="page-subtitle">Our Work</span>
+                    <h1 class="page-title">Portfolio</h1>
+                    <p class="page-description">Discover our collection of thoughtfully designed spaces that reflect our commitment to luxury, functionality, and timeless elegance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Filter -->
+        <section class="portfolio-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="heritage">Heritage & Conservation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="portfolio-grid">
+            <div class="container">
+                <div class="portfolio-wrapper">
+                    
+                    <!-- Residential Projects -->
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-residential-1.jpg" alt="Modern Family Home">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Residential</span>
+                                    <h3 class="portfolio-title">Modern Family Home</h3>
+                                    <p class="portfolio-description">A contemporary family residence featuring open-plan living and natural materials.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-residential-2.jpg" alt="Luxury Apartment">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Residential</span>
+                                    <h3 class="portfolio-title">Luxury City Apartment</h3>
+                                    <p class="portfolio-description">An elegant urban apartment with sophisticated finishes and custom furniture.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="residential">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-residential-3.jpg" alt="Country Estate">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Residential</span>
+                                    <h3 class="portfolio-title">Country Estate</h3>
+                                    <p class="portfolio-description">A grand country home blending traditional architecture with modern amenities.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Projects -->
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-commercial-1.jpg" alt="Boutique Hotel">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Commercial</span>
+                                    <h3 class="portfolio-title">Boutique Hotel</h3>
+                                    <p class="portfolio-description">A luxury boutique hotel with distinctive interiors that create memorable guest experiences.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-commercial-2.jpg" alt="Corporate Office">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Commercial</span>
+                                    <h3 class="portfolio-title">Corporate Headquarters</h3>
+                                    <p class="portfolio-description">A modern office space designed to inspire creativity and collaboration.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="commercial">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-commercial-3.jpg" alt="Restaurant">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Commercial</span>
+                                    <h3 class="portfolio-title">Fine Dining Restaurant</h3>
+                                    <p class="portfolio-description">An intimate dining space with warm materials and atmospheric lighting.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heritage Projects -->
+                    <div class="portfolio-item" data-category="heritage">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-heritage-1.jpg" alt="Georgian Townhouse">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Heritage</span>
+                                    <h3 class="portfolio-title">Georgian Townhouse</h3>
+                                    <p class="portfolio-description">Sensitive restoration of a historic Georgian property with modern interventions.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="heritage">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-heritage-2.jpg" alt="Victorian Conversion">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Heritage</span>
+                                    <h3 class="portfolio-title">Victorian Warehouse Conversion</h3>
+                                    <p class="portfolio-description">Transformation of an industrial heritage building into luxury residential apartments.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="heritage">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio-heritage-3.jpg" alt="Listed Building">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <span class="portfolio-category">Heritage</span>
+                                    <h3 class="portfolio-title">Listed Manor House</h3>
+                                    <p class="portfolio-description">Conservation project preserving historical features while creating contemporary living spaces.</p>
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="portfolio-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Inspired by Our Work?</h2>
+                    <p>Let's create something extraordinary together. Contact us to discuss your next project.</p>
+                    <a href="contact.html" class="cta-button">Start Your Project</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <div class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <nav class="mobile-nav">
+                <a href="services.html" class="mobile-nav-link">Services</a>
+                <a href="portfolio.html" class="mobile-nav-link active">Portfolio</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </nav>
+            
+            <div class="mobile-contact">
+                <p>Get in touch</p>
+                <a href="mailto:info@yourdesignstudio.com">info@yourdesignstudio.com</a>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
