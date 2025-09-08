@@ -343,8 +343,8 @@ body.animation-complete [data-intro-hide] {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    /* Custom cursor enabled but simplified */
-    cursor: none;
+    /* Standard cursor everywhere */
+    cursor: default;
 }
 
 /* All other sections should have standard cursor */
@@ -362,30 +362,18 @@ body.animation-complete [data-intro-hide] {
     cursor: default !important;
 }
 
-/* Project showcase uses custom cursor */
+/* Project showcase uses standard cursor */
 .project-showcase {
-    cursor: none !important;
+    cursor: default !important;
 }
 
 .project-showcase * {
-    cursor: none !important;
+    cursor: default !important;
 }
 
-/* Custom cursor with white spot issue fixed */
+/* Custom cursor completely disabled - using standard cursor */
 .custom-cursor {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transition: all 0.15s ease;
-    backdrop-filter: blur(5px);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
+    display: none !important;
 }
 
 /* Hide cursor when mobile menu is open */
