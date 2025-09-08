@@ -67,7 +67,9 @@ function initProjectSlideshow() {
   if (slides.length === 0) return;
 
   function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach(slide => {
+      slide.classList.remove('active', 'animate');
+    });
     navItems.forEach(item => {
       item.classList.remove('active');
       const progressFill = item.querySelector('.progress-fill');
@@ -75,6 +77,12 @@ function initProjectSlideshow() {
     });
 
     slides[index].classList.add('active');
+    
+    // Trigger animation after a brief delay
+    setTimeout(() => {
+      slides[index].classList.add('animate');
+    }, 100);
+    
     if (navItems[index]) {
       navItems[index].classList.add('active');
       const progressFill = navItems[index].querySelector('.progress-fill');

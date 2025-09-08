@@ -439,9 +439,8 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    /* Cursor mask removed - simple overlay for better performance */
 }
 
 /* Project Content (Left-Center) */
@@ -471,24 +470,48 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
     color: white;
     margin: 0;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    /* Animations removed - always visible */
-    transform: translateX(0);
-    opacity: 1;
     max-width: 800px;
 }
 
-/* Title animations removed for better performance */
-
-/* Title word styling - matching services page */
+/* Title word animations - similar to services page */
 .title-word {
     display: block;
     color: white;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
 }
 
 .title-word.accent {
     color: #c9a96e;
     font-style: italic;
 }
+
+/* Second word slides from right */
+.title-word:nth-child(2) {
+    transform: translateX(100px);
+}
+
+/* Animate when slide is active - with auto trigger for first slide */
+.project-slide.active.animate .title-word:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.5s;
+}
+
+.project-slide.active.animate .title-word:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.project-slide.active.animate .title-word:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.1s;
+}
+
+/* Old title-word styling removed - using animated version above */
 
 .project-subtitle {
     font-family: 'Inter', sans-serif;
