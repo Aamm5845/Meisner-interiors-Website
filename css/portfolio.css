@@ -72,7 +72,7 @@
 }
 
 .portfolio-title {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 4rem;
     font-weight: 300;
     line-height: 1.1;
@@ -298,7 +298,7 @@
 }
 
 .project-title {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
@@ -391,7 +391,7 @@
 }
 
 .cta-title {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 4rem;
     font-weight: 300;
     line-height: 1.1;
@@ -802,7 +802,7 @@
 }
 
 .modal-title {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 2rem;
     font-weight: 300;
     color: #1a1a1a;

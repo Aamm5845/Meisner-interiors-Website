@@ -345,7 +345,7 @@
 }
 
 .description-accent {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 1rem;
     font-style: italic;
     color: #c9a96e;
@@ -367,7 +367,7 @@
 }
 
 .stat-number {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 2.5rem;
     font-weight: 300;
     color: #c9a96e;

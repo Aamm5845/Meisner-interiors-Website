@@ -511,7 +511,7 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
 }
 
 .project-title {
-    font-family: 'Maginia', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 5.5rem;
     font-weight: 300;
     line-height: 1.1;
@@ -1473,7 +1473,7 @@ body.animation-complete [data-scroll-animate] {
 }
 
 .panel-title {
-    font-family: 'maginiaregular', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 3rem;
     font-weight: normal;
     margin: 0;
@@ -1575,7 +1575,7 @@ body.animation-complete [data-scroll-animate] {
 }
 
 .team-headline {
-    font-family: 'maginiaregular', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 3.5rem;
     font-weight: normal;
     line-height: 1.1;
@@ -1968,7 +1968,7 @@ body.animation-complete [data-scroll-animate] {
 }
 
 .info-card h3 {
-    font-family: 'maginiaregular', serif;
+    font-family: 'Maginia', 'maginiaregular', 'Playfair Display', 'Georgia', serif;
     font-size: 1.5rem;
     font-weight: normal;
     color: white;
