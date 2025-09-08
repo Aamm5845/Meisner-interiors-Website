@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://meisnerinteriors.com/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg</image:loc>
+      <image:caption>Luxury Master Bedroom Design by Meisner Interiors</image:caption>
+      <image:title>Master Bedroom Interior Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/booth%202.jpg</image:loc>
+      <image:caption>Commercial Design Excellence by Meisner Interiors</image:caption>
+      <image:title>Commercial Interior Design Projects</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/booth%201.jpg</image:loc>
+      <image:caption>Corporate Design Solutions by Meisner Interiors</image:caption>
+      <image:title>Corporate Interior Design Montreal</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services Page - High Priority -->
+  <url>
+    <loc>https://meisnerinteriors.com/services.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio Page - High Priority -->
+  <url>
+    <loc>https://meisnerinteriors.com/portfolio.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg</image:loc>
+      <image:caption>Luxury Master Bedroom Design Portfolio</image:caption>
+      <image:title>Master Bedroom Interior Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/STUDY%20ROOM%20070725%20IMG01.jpg</image:loc>
+      <image:caption>Executive Study Room Design Portfolio</image:caption>
+      <image:title>Home Office Interior Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/STAIRCASE%20IMG%2002%20052825.jpg</image:loc>
+      <image:caption>Modern Staircase Design Portfolio</image:caption>
+      <image:title>Architectural Staircase Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Booth%20about.jpg</image:loc>
+      <image:caption>Commercial Exhibition Booth Design Portfolio</image:caption>
+      <image:title>Trade Show Booth Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Playground%201%20s.jpg</image:loc>
+      <image:caption>Communal Space Design Portfolio</image:caption>
+      <image:title>Community Interior Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Ballroom.jpg</image:loc>
+      <image:caption>Luxury Ballroom Design Portfolio</image:caption>
+      <image:title>Event Space Interior Design Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/light.jpg</image:loc>
+      <image:caption>Residential Lighting Design Portfolio</image:caption>
+      <image:title>Lighting Design Solutions Montreal</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page - High Priority -->
+  <url>
+    <loc>https://meisnerinteriors.com/about.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Me%20profile.jpg</image:loc>
+      <image:caption>Aaron Meisner - Principal Interior Designer</image:caption>
+      <image:title>Aaron Meisner Interior Designer Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Sami%20profile.jpeg</image:loc>
+      <image:caption>Sami Youssef - Drafting and Site Lead</image:caption>
+      <image:title>Interior Design Team Montreal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://meisnerinteriors.com/images/Vitor%20profile.jpeg</image:loc>
+      <image:caption>Manoel Vitor - Designer and 3D Artist</image:caption>
+      <image:title>3D Visualization Team Montreal</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact Page - High Priority -->
+  <url>
+    <loc>https://meisnerinteriors.com/contact.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

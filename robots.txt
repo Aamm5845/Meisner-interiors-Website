@@ -1,0 +1,51 @@
+# Robots.txt for Meisner Interiors - Luxury Interior Design
+# Optimized for maximum SEO performance and crawl efficiency
+
+User-agent: *
+Allow: /
+
+# Block unnecessary files and directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /Font/
+Disallow: /New folder/
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /assets/*.svg$
+
+# Allow important resources for rendering
+Allow: /css/style.css
+Allow: /css/about.css
+Allow: /css/contact.css
+Allow: /css/portfolio.css
+Allow: /css/services.css
+Allow: /js/main.js
+
+# Allow all image directories for Google Images
+Allow: /images/
+Allow: /assets/
+
+# Block admin and development files
+Disallow: /contact-old.html
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /error.log
+
+# Sitemap location
+Sitemap: https://meisnerinteriors.com/sitemap.xml
+
+# Crawl delay for courtesy (optional)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

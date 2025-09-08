@@ -1,284 +1,271 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Your Interior Design Firm</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <meta name="description" content="Contact Your Interior Design Firm for luxury interior design services. Get in touch to discuss your next project and schedule a consultation.">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Contact - Meisner Interiors | Let's Create Something Extraordinary</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="description" content="Contact Meisner Interiors for luxury interior design services. Transform your space with Aaron Meisner and our award-winning design team in Montreal.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Font/stylesheet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/protection.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="contact-page">
-    <!-- Header Navigation -->
-    <header id="header" class="header-dark">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <div class="logo-placeholder">
-                        <h2>Your Design Studio</h2>
-                    </div>
-                </a>
-                
-                <div class="nav-menu">
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link active">Contact</a>
-                </div>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <!-- Particles Background -->
+  <div class="particles-container">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+    <div class="particle particle-6"></div>
+    <div class="particle particle-7"></div>
+    <div class="particle particle-8"></div>
+  </div>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="page-hero">
-            <div class="hero-background" style="background-image: url('images/contact-hero.jpg');">
-                <div class="overlay"></div>
-            </div>
-            <div class="hero-content">
-                <div class="container">
-                    <span class="page-subtitle">Get in Touch</span>
-                    <h1 class="page-title">Contact Us</h1>
-                    <p class="page-description">Ready to transform your space? Let's discuss your vision and bring it to life with our expert design team.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-wrapper">
-                    
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <div class="form-header">
-                            <h2>Start Your Project</h2>
-                            <p>Tell us about your project and we'll get back to you within 24 hours.</p>
-                        </div>
-                        
-                        <form class="contact-form-fields" action="#" method="POST">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="projectType">Project Type *</label>
-                                <select id="projectType" name="projectType" required>
-                                    <option value="">Select a project type</option>
-                                    <option value="residential-interior">Residential Interior Design</option>
-                                    <option value="residential-architecture">Residential Architecture</option>
-                                    <option value="commercial-interior">Commercial Interior Design</option>
-                                    <option value="commercial-architecture">Commercial Architecture</option>
-                                    <option value="heritage-conservation">Heritage & Conservation</option>
-                                    <option value="planning-applications">Planning Applications</option>
-                                    <option value="consultation">Design Consultation</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="budget">Project Budget</label>
-                                    <select id="budget" name="budget">
-                                        <option value="">Select budget range</option>
-                                        <option value="50k-100k">$50,000 - $100,000</option>
-                                        <option value="100k-250k">$100,000 - $250,000</option>
-                                        <option value="250k-500k">$250,000 - $500,000</option>
-                                        <option value="500k-1m">$500,000 - $1,000,000</option>
-                                        <option value="1m+">$1,000,000+</option>
-                                        <option value="prefer-not-to-say">Prefer not to say</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="timeline">Project Timeline</label>
-                                    <select id="timeline" name="timeline">
-                                        <option value="">Select timeline</option>
-                                        <option value="asap">As soon as possible</option>
-                                        <option value="3-6-months">3-6 months</option>
-                                        <option value="6-12-months">6-12 months</option>
-                                        <option value="1-2-years">1-2 years</option>
-                                        <option value="flexible">Flexible</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Project Details *</label>
-                                <textarea id="message" name="message" rows="6" placeholder="Tell us about your vision, space requirements, style preferences, and any specific needs or challenges..." required></textarea>
-                            </div>
-                            
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="privacy" required>
-                                    <span class="checkmark"></span>
-                                    I agree to the <a href="#" class="privacy-link">Privacy Policy</a> and consent to being contacted about this project.
-                                </label>
-                            </div>
-                            
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="newsletter">
-                                    <span class="checkmark"></span>
-                                    I would like to receive design inspiration and updates via email.
-                                </label>
-                            </div>
-                            
-                            <button type="submit" class="submit-button">Send Message</button>
-                        </form>
-                    </div>
-
-                    <!-- Contact Information -->
-                    <div class="contact-info">
-                        <div class="info-section">
-                            <h3>Studio Information</h3>
-                            <div class="info-item">
-                                <div class="info-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Address</h4>
-                                    <p>Your Design Studio<br>
-                                    123 Design Street<br>
-                                    Design District<br>
-                                    New York, NY 10001</p>
-                                </div>
-                            </div>
-                            
-                            <div class="info-item">
-                                <div class="info-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Phone</h4>
-                                    <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="info-item">
-                                <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:info@yourdesignstudio.com">info@yourdesignstudio.com</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="info-item">
-                                <div class="info-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="info-details">
-                                    <h4>Studio Hours</h4>
-                                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
-                                    Saturday: 10:00 AM - 4:00 PM<br>
-                                    Sunday: By appointment</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-section">
-                            <h3>Follow Us</h3>
-                            <div class="social-links">
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-pinterest"></i>
-                                    <span>Pinterest</span>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-linkedin"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-facebook"></i>
-                                    <span>Facebook</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section (Optional - can be enabled when ready) -->
-        <!-- <section class="map-section">
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=..." 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </section> -->
-    </main>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu">
-            <div class="mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </div>
-            <nav class="mobile-nav">
-                <a href="services.html" class="mobile-nav-link">Services</a>
-                <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
-                <a href="about.html" class="mobile-nav-link">About</a>
-                <a href="contact.html" class="mobile-nav-link active">Contact</a>
-            </nav>
-            
-            <div class="mobile-contact">
-                <p>Get in touch</p>
-                <a href="mailto:info@yourdesignstudio.com">info@yourdesignstudio.com</a>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </div>
-        </div>
+  <!-- Minimal Navigation -->
+  <div class="minimal-nav">
+    <!-- Top Logo Icon -->
+    <div class="nav-logo-icon">
+      <a href="index.html">
+        <svg class="header-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.84 113.34" aria-hidden="true" focusable="false">
+          <defs>
+            <style>
+              .nav-cls-1 { fill: none; stroke: #fff; stroke-width: 5px; stroke-miterlimit: 10; }
+              .nav-cls-2 { stroke: #fff; stroke-width: 3.23px; stroke-miterlimit: 10; fill: none; }
+            </style>
+          </defs>
+          <path class="nav-cls-2" d="m83.67,13.95c-13.15,0-24.58,4.38-33.96,13.03l-.48.44-.48-.44c-9.31-8.42-20.61-12.69-33.58-12.69H1.62v97.44h13.55c4.11,0,8.12-.44,11.92-1.3l-1.22-2.62c-3.41.74-7,1.11-10.7,1.11H4.65V17.1h10.52c12.13,0,22.72,3.99,31.48,11.87l.54.49-.5.53c-8.92,9.51-13.44,20.5-13.44,32.68,0,7.26,1.61,14.15,4.78,20.46,2.21,4.39,5.24,8.63,9.01,12.58l.3.32c.19.2.37.4.57.59.51.52,1.07,1.05,1.69,1.63.46-.43.9-.86,1.32-1.28.36-.36.69-.72,1.03-1.08l.18-.2c3.71-3.95,6.68-8.18,8.83-12.55,3.06-6.21,4.61-12.99,4.61-20.13,0-12.33-4.64-23.45-13.79-33.05l-.5-.53.54-.49c8.83-8.08,19.54-12.18,31.84-12.18h10.52v94.62h3.04V13.95h-13.56Zm-21.12,49.06c0,7.44-1.76,14.43-5.24,20.79-1.88,3.43-4.3,6.75-7.2,9.86l-.52.55-.52-.55c-2.96-3.13-5.43-6.44-7.34-9.86-3.6-6.44-5.43-13.55-5.43-21.13,0-11.47,4.19-21.78,12.44-30.64l.52-.55.52.55c8.47,8.95,12.77,19.37,12.77,30.99Z"/>
+          <circle class="nav-cls-1" cx="49.42" cy="9.53" r="7.03"/>
+        </svg>
+      </a>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Modern Hamburger Menu -->
+    <button class="modern-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="line" aria-hidden="true"></span>
+      <span class="line" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section with Morphing Background -->
+    <section class="contact-hero">
+      <div class="morphing-background">
+        <div class="morph-shape shape-1"></div>
+        <div class="morph-shape shape-2"></div>
+        <div class="morph-shape shape-3"></div>
+      </div>
+      
+      <div class="hero-background-text">
+        <span class="contact-letter" data-letter="1">C</span>
+        <span class="contact-letter" data-letter="2">O</span>
+        <span class="contact-letter" data-letter="3">N</span>
+        <span class="contact-letter" data-letter="4">T</span>
+        <span class="contact-letter" data-letter="5">A</span>
+        <span class="contact-letter" data-letter="6">C</span>
+        <span class="contact-letter" data-letter="7">T</span>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            <span class="line-1">Let's Create</span>
+            <span class="line-2">Something</span>
+            <span class="line-3">Extraordinary</span>
+          </h1>
+          <p class="hero-description">Transform your vision into reality with Meisner Interiors. Every great design begins with a conversation.</p>
+          <div class="scroll-indicator">
+            <div class="scroll-arrow">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <span class="scroll-text">Start Your Journey</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="float-element element-1">
+          <i class="fas fa-palette"></i>
+        </div>
+        <div class="float-element element-2">
+          <i class="fas fa-ruler-combined"></i>
+        </div>
+        <div class="float-element element-3">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="float-element element-4">
+          <i class="fas fa-home"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section contact-section" data-nav-theme="light">
+      <div class="form-container">
+        <div class="form-header">
+          <h2 class="form-title">Start Your Project</h2>
+          <p class="form-subtitle">Tell us about your vision and we'll bring it to life</p>
+        </div>
+
+        <form class="luxury-form" id="contactForm">
+          <div class="form-grid">
+            <div class="form-group floating-label">
+              <input type="text" id="firstName" name="firstName" required>
+              <label for="firstName">First Name</label>
+              <div class="form-line"></div>
+            </div>
+
+            <div class="form-group floating-label">
+              <input type="text" id="lastName" name="lastName" required>
+              <label for="lastName">Last Name</label>
+              <div class="form-line"></div>
+            </div>
+
+            <div class="form-group floating-label">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Email Address</label>
+              <div class="form-line"></div>
+            </div>
+
+            <div class="form-group floating-label">
+              <input type="tel" id="phone" name="phone">
+              <label for="phone">Phone Number</label>
+              <div class="form-line"></div>
+            </div>
+
+            <div class="form-group select-group full-width">
+              <select id="projectType" name="projectType" required>
+                <option value="">Select Project Type</option>
+                <option value="residential">Residential Design</option>
+                <option value="commercial">Commercial Design</option>
+                <option value="corporate">Corporate Design</option>
+                <option value="consultation">Design Consultation</option>
+              </select>
+              <label for="projectType">Project Type</label>
+              <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+            </div>
+
+            <div class="form-group select-group">
+              <select id="budget" name="budget">
+                <option value="">Select Budget Range</option>
+                <option value="50k-100k">$50,000 - $100,000</option>
+                <option value="100k-250k">$100,000 - $250,000</option>
+                <option value="250k-500k">$250,000 - $500,000</option>
+                <option value="500k+">$500,000+</option>
+              </select>
+              <label for="budget">Budget Range</label>
+              <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+            </div>
+
+            <div class="form-group select-group">
+              <select id="timeline" name="timeline">
+                <option value="">Select Timeline</option>
+                <option value="asap">As soon as possible</option>
+                <option value="3-6-months">3-6 months</option>
+                <option value="6-12-months">6-12 months</option>
+                <option value="flexible">Flexible</option>
+              </select>
+              <label for="timeline">Project Timeline</label>
+              <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+            </div>
+
+            <div class="form-group textarea-group full-width">
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Tell us about your vision</label>
+              <div class="form-line"></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="luxury-submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+              <div class="btn-ripple"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section contact-section" data-nav-theme="light">
+      <div class="info-container">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Our Studio</h3>
+            <p>6700 Ave Du Parc Unit 109<br>Montreal QC H2V4H9<br>Canada</p>
+            <a href="https://maps.google.com/?q=6700+Ave+Du+Parc+Unit+109,+Montreal+QC+H2V4H9,+Canada" target="_blank" class="info-link">View on Map</a>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p>Ready to start your project?<br>We'd love to hear from you.</p>
+            <a href="mailto:shaya@meisnerinteriors.com" class="info-link">shaya@meisnerinteriors.com</a>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>Speak directly with our design team<br>for immediate assistance.</p>
+            <a href="tel:514-227-5505" class="info-link">514-227-5505</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="copyright">&copy; 2025 Meisner Interiors. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div class="mobile-menu-close" aria-label="Close menu" role="button" tabindex="0">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </div>
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/protection.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

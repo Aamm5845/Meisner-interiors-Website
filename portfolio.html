@@ -2,10 +2,10 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - Your Interior Design Firm</title>
+    <title>Portfolio - Meisner Interiors | Luxury Design Showcase</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <meta name="description" content="Explore our portfolio of luxury interior design projects including residential homes, commercial spaces, and heritage properties.">
+    <meta name="description" content="Explore Meisner Interiors' portfolio of extraordinary interior design projects spanning Montreal, New York, and Israel. Premium residential and commercial spaces.">
     <meta name="robots" content="index, follow">
     
     <!-- Favicon -->
@@ -13,8 +13,11 @@
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     
     <!-- CSS -->
+    <link rel="stylesheet" href="Font/stylesheet.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/protection.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,209 +26,507 @@
 </head>
 
 <body class="portfolio-page">
-    <!-- Header Navigation -->
-    <header id="header" class="header-dark">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    <div class="logo-placeholder">
-                        <h2>Your Design Studio</h2>
-                    </div>
-                </a>
-                
-                <div class="nav-menu">
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+  <!-- Minimal Navigation -->
+  <div class="minimal-nav">
+    <!-- Top Logo Icon (stays in header) -->
+    <div class="nav-logo-icon">
+      <a href="index.html">
+        <svg class="header-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.84 113.34" aria-hidden="true" focusable="false">
+          <defs>
+            <style>
+              .nav-cls-1 { fill: none; stroke: #fff; stroke-width: 5px; stroke-miterlimit: 10; }
+              .nav-cls-2 { stroke: #fff; stroke-width: 3.23px; stroke-miterlimit: 10; fill: none; }
+            </style>
+          </defs>
+          <path class="nav-cls-2" d="m83.67,13.95c-13.15,0-24.58,4.38-33.96,13.03l-.48.44-.48-.44c-9.31-8.42-20.61-12.69-33.58-12.69H1.62v97.44h13.55c4.11,0,8.12-.44,11.92-1.3l-1.22-2.62c-3.41.74-7,1.11-10.7,1.11H4.65V17.1h10.52c12.13,0,22.72,3.99,31.48,11.87l.54.49-.5.53c-8.92,9.51-13.44,20.5-13.44,32.68,0,7.26,1.61,14.15,4.78,20.46,2.21,4.39,5.24,8.63,9.01,12.58l.3.32c.19.2.37.4.57.59.51.52,1.07,1.05,1.69,1.63.46-.43.9-.86,1.32-1.28.36-.36.69-.72,1.03-1.08l.18-.2c3.71-3.95,6.68-8.18,8.83-12.55,3.06-6.21,4.61-12.99,4.61-20.13,0-12.33-4.64-23.45-13.79-33.05l-.5-.53.54-.49c8.83-8.08,19.54-12.18,31.84-12.18h10.52v94.62h3.04V13.95h-13.56Zm-21.12,49.06c0,7.44-1.76,14.43-5.24,20.79-1.88,3.43-4.3,6.75-7.2,9.86l-.52.55-.52-.55c-2.96-3.13-5.43-6.44-7.34-9.86-3.6-6.44-5.43-13.55-5.43-21.13,0-11.47,4.19-21.78,12.44-30.64l.52-.55.52.55c8.47,8.95,12.77,19.37,12.77,30.99Z"/>
+          <circle class="nav-cls-1" cx="49.42" cy="9.53" r="7.03"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Modern Hamburger Menu -->
+    <button class="modern-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="line" aria-hidden="true"></span>
+      <span class="line" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Clean Portfolio Header -->
+    <section class="portfolio-header" data-nav-theme="light">
+      <!-- Animated Background Text -->
+      <div class="portfolio-background-text">
+        <span class="portfolio-letter" data-letter="1">P</span>
+        <span class="portfolio-letter" data-letter="2">O</span>
+        <span class="portfolio-letter" data-letter="3">R</span>
+        <span class="portfolio-letter" data-letter="4">T</span>
+        <span class="portfolio-letter" data-letter="5">F</span>
+        <span class="portfolio-letter" data-letter="6">O</span>
+        <span class="portfolio-letter" data-letter="7">L</span>
+        <span class="portfolio-letter" data-letter="8">I</span>
+        <span class="portfolio-letter" data-letter="9">O</span>
+      </div>
+      
+      <div class="header-content">
+        <h1 class="portfolio-title">Portfolio</h1>
+        <p class="portfolio-subtitle">Our finest work across residential, commercial, and communal spaces</p>
+      </div>
+    </section>
+
+    <!-- Premium Category Navigation -->
+    <section class="category-nav" data-nav-theme="light">
+      <div class="nav-container">
+        <div class="category-tabs">
+          <button class="tab-btn active" data-category="all">
+            <span class="tab-line"></span>
+            <span class="tab-text">All Projects</span>
+          </button>
+          <button class="tab-btn" data-category="residential">
+            <span class="tab-line"></span>
+            <span class="tab-text">Residential</span>
+          </button>
+          <button class="tab-btn" data-category="commercial">
+            <span class="tab-line"></span>
+            <span class="tab-text">Commercial</span>
+          </button>
+          <button class="tab-btn" data-category="communal">
+            <span class="tab-line"></span>
+            <span class="tab-text">Communal</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stunning Portfolio Showcase -->
+    <section class="portfolio-showcase portfolio-content" style="padding: 4rem 0;" data-nav-theme="light">
+      <div class="showcase-container" style="padding: 0 2rem;">
+        <!-- RESIDENTIAL PROJECTS -->
+        
+        <!-- Master Suite Collection -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="master-suite" onclick="openProjectModal('master-suite')">
+            <img src="images/Master%20bedroom/Master%20Bedroom%20.jpg" alt="Luxury Master Suite Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="page-hero">
-            <div class="hero-background" style="background-image: url('images/portfolio-hero.jpg');">
-                <div class="overlay"></div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Master Suite</span>
             </div>
-            <div class="hero-content">
-                <div class="container">
-                    <span class="page-subtitle">Our Work</span>
-                    <h1 class="page-title">Portfolio</h1>
-                    <p class="page-description">Discover our collection of thoughtfully designed spaces that reflect our commitment to luxury, functionality, and timeless elegance.</p>
-                </div>
+            <h3 class="project-title">Luxury Master Suite</h3>
+            <p class="project-description">
+              An elegant master bedroom featuring sophisticated design elements, premium materials, 
+              and thoughtful details that create the ultimate private retreat for rest and relaxation.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Executive Study -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Executive Study</span>
             </div>
-        </section>
-
-        <!-- Portfolio Filter -->
-        <section class="portfolio-filter">
-            <div class="container">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="residential">Residential</button>
-                    <button class="filter-btn" data-filter="commercial">Commercial</button>
-                    <button class="filter-btn" data-filter="heritage">Heritage & Conservation</button>
-                </div>
+            <h3 class="project-title">Professional Home Office</h3>
+            <p class="project-description">
+              A sophisticated workspace combining rich wood finishes, custom built-ins, 
+              and strategic lighting to create an inspiring environment for productivity and focus.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="study-room" onclick="openProjectModal('study-room')">
+            <img src="images/STUDY%20ROOM%20070725%20IMG01.jpg" alt="Executive Study Room Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
             </div>
-        </section>
-
-        <!-- Portfolio Grid -->
-        <section class="portfolio-grid">
-            <div class="container">
-                <div class="portfolio-wrapper">
-                    
-                    <!-- Residential Projects -->
-                    <div class="portfolio-item" data-category="residential">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-residential-1.jpg" alt="Modern Family Home">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Residential</span>
-                                    <h3 class="portfolio-title">Modern Family Home</h3>
-                                    <p class="portfolio-description">A contemporary family residence featuring open-plan living and natural materials.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="residential">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-residential-2.jpg" alt="Luxury Apartment">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Residential</span>
-                                    <h3 class="portfolio-title">Luxury City Apartment</h3>
-                                    <p class="portfolio-description">An elegant urban apartment with sophisticated finishes and custom furniture.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="residential">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-residential-3.jpg" alt="Country Estate">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Residential</span>
-                                    <h3 class="portfolio-title">Country Estate</h3>
-                                    <p class="portfolio-description">A grand country home blending traditional architecture with modern amenities.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Commercial Projects -->
-                    <div class="portfolio-item" data-category="commercial">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-commercial-1.jpg" alt="Boutique Hotel">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Commercial</span>
-                                    <h3 class="portfolio-title">Boutique Hotel</h3>
-                                    <p class="portfolio-description">A luxury boutique hotel with distinctive interiors that create memorable guest experiences.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="commercial">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-commercial-2.jpg" alt="Corporate Office">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Commercial</span>
-                                    <h3 class="portfolio-title">Corporate Headquarters</h3>
-                                    <p class="portfolio-description">A modern office space designed to inspire creativity and collaboration.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="commercial">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-commercial-3.jpg" alt="Restaurant">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Commercial</span>
-                                    <h3 class="portfolio-title">Fine Dining Restaurant</h3>
-                                    <p class="portfolio-description">An intimate dining space with warm materials and atmospheric lighting.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Heritage Projects -->
-                    <div class="portfolio-item" data-category="heritage">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-heritage-1.jpg" alt="Georgian Townhouse">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Heritage</span>
-                                    <h3 class="portfolio-title">Georgian Townhouse</h3>
-                                    <p class="portfolio-description">Sensitive restoration of a historic Georgian property with modern interventions.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="heritage">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-heritage-2.jpg" alt="Victorian Conversion">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Heritage</span>
-                                    <h3 class="portfolio-title">Victorian Warehouse Conversion</h3>
-                                    <p class="portfolio-description">Transformation of an industrial heritage building into luxury residential apartments.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item" data-category="heritage">
-                        <div class="portfolio-image">
-                            <img src="images/portfolio-heritage-3.jpg" alt="Listed Building">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-info">
-                                    <span class="portfolio-category">Heritage</span>
-                                    <h3 class="portfolio-title">Listed Manor House</h3>
-                                    <p class="portfolio-description">Conservation project preserving historical features while creating contemporary living spaces.</p>
-                                    <a href="#" class="portfolio-link">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+          </div>
+        </div>
+        
+        <!-- Modern Kitchen Design -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="kitchen-modern" onclick="openProjectModal('kitchen-modern')">
+            <img src="images/kitchen%202/KITCHEN%20IMG01%20082525.jpg" alt="Modern Kitchen Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="portfolio-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Inspired by Our Work?</h2>
-                    <p>Let's create something extraordinary together. Contact us to discuss your next project.</p>
-                    <a href="contact.html" class="cta-button">Start Your Project</a>
-                </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Culinary Space</span>
             </div>
-        </section>
-    </main>
+            <h3 class="project-title">Contemporary Kitchen</h3>
+            <p class="project-description">
+              A modern culinary space featuring sleek cabinetry, premium appliances, 
+              and innovative storage solutions designed for both functionality and aesthetic appeal.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Architectural Staircase -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Architectural Feature</span>
+            </div>
+            <h3 class="project-title">Statement Staircase</h3>
+            <p class="project-description">
+              A striking architectural centerpiece featuring clean lines, premium materials, 
+              and dramatic lighting that transforms circulation into a sculptural design element.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="staircase" onclick="openProjectModal('staircase')">
+            <img src="images/STAIRCASE%20IMG%2002%20052825.jpg" alt="Architectural Staircase Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elegant Dining Room -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="dining-room" onclick="openProjectModal('dining-room')">
+            <img src="images/Dining%20room/DINING%20ROOM%20IMG01%20062525.jpg" alt="Elegant Dining Room Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Dining Experience</span>
+            </div>
+            <h3 class="project-title">Formal Dining Room</h3>
+            <p class="project-description">
+              An sophisticated dining space designed for memorable gatherings, featuring elegant furnishings, 
+              refined lighting, and carefully curated details that enhance the dining experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Basement Entertainment -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Entertainment Space</span>
+            </div>
+            <h3 class="project-title">Luxury Basement Lounge</h3>
+            <p class="project-description">
+              A sophisticated lower-level entertainment area featuring custom built-ins, premium finishes, 
+              and thoughtful lighting design that creates the perfect space for relaxation and entertaining.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="basement" onclick="openProjectModal('basement')">
+            <img src="images/Basement/BASEMENT%20IMG01%20062825.jpg" alt="Luxury Basement Entertainment Space" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grand Entrance -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="entrance" onclick="openProjectModal('entrance')">
+            <img src="images/Entrence/ENTRENCE%20IMG01%20072525.jpg" alt="Grand Entrance Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Grand Entrance</span>
+            </div>
+            <h3 class="project-title">Welcoming Foyer</h3>
+            <p class="project-description">
+              An impressive entrance that sets the tone for the entire home, featuring dramatic design elements, 
+              custom millwork, and strategic lighting that creates a memorable first impression.
+            </p>
+          </div>
+        </div>
+
+        <!-- Professional Office -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Corporate Office</span>
+            </div>
+            <h3 class="project-title">Executive Workspace</h3>
+            <p class="project-description">
+              A professional office environment designed for productivity and success, featuring modern furnishings, 
+              efficient layouts, and sophisticated finishes that reflect corporate excellence.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="office" onclick="openProjectModal('office')">
+            <img src="images/Office/OFFICE%20IMG01%20072525.jpg" alt="Professional Office Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Grand Ballroom -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="ballroom" onclick="openProjectModal('ballroom')">
+            <img src="images/Ballroom/BALLROOM%20IMG01%20081925.jpg" alt="Grand Ballroom Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Event Venue</span>
+            </div>
+            <h3 class="project-title">Luxury Ballroom</h3>
+            <p class="project-description">
+              An opulent event space featuring crystal chandeliers, rich drapery, and elegant furnishings 
+              that create the perfect setting for luxury celebrations and memorable occasions.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Hotel Lobby -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Hospitality Design</span>
+            </div>
+            <h3 class="project-title">Grand Hotel Lobby</h3>
+            <p class="project-description">
+              A sophisticated lobby design that welcomes guests with elegance and comfort, featuring premium materials, 
+              thoughtful seating arrangements, and artistic elements that create a memorable hospitality experience.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="lobby" onclick="openProjectModal('lobby')">
+            <img src="images/Lobby/LOBBY%20IMG01%20072525.jpg" alt="Luxury Hotel Lobby Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specialty Grocery -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="grocery" onclick="openProjectModal('grocery')">
+            <img src="images/Grocery/GROCERY%20IMG01%20072525.jpg" alt="Modern Grocery Store Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Retail Design</span>
+            </div>
+            <h3 class="project-title">Premium Market</h3>
+            <p class="project-description">
+              A modern retail space designed for optimal shopping experience, featuring efficient layouts, 
+              attractive displays, and premium finishes that enhance the customer journey and brand image.
+            </p>
+          </div>
+        </div>
+        
+        <!-- COMMUNAL PROJECTS -->
+        
+        <!-- Children's Playground -->
+        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Play Environment</span>
+            </div>
+            <h3 class="project-title">Interactive Playground</h3>
+            <p class="project-description">
+              A vibrant and safe play environment designed to stimulate creativity and learning 
+              through thoughtful space planning, colorful elements, and child-friendly materials.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="playground" onclick="openProjectModal('playground')">
+            <img src="images/Playground%201%20s.jpg" alt="Creative Children's Playground Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sacred Mikvah Space -->
+        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="mikvah" onclick="openProjectModal('mikvah')">
+            <img src="images/Mikvah/MIKVAH%20IMG01%20062825.jpg" alt="Sacred Mikvah Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Sacred Space</span>
+            </div>
+            <h3 class="project-title">Mikvah Sanctuary</h3>
+            <p class="project-description">
+              A serene and sacred space designed with respect for tradition and modern comfort, 
+              featuring natural materials, calming colors, and thoughtful details that enhance the spiritual experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Seasonal Sukkah -->
+        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Festival Space</span>
+            </div>
+            <h3 class="project-title">Elegant Sukkah</h3>
+            <p class="project-description">
+              A beautifully designed temporary structure that honors tradition while providing comfort and style, 
+              featuring natural elements, thoughtful lighting, and decorative details that create a warm gathering space.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="sukkah" onclick="openProjectModal('sukkah')">
+            <img src="images/Sukkah/SUKKAH%20IMG01%20092625.jpg" alt="Elegant Sukkah Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Premium Call-to-Action -->
+    <section class="portfolio-cta">
+      <div class="cta-canvas">
+        <div class="cta-gradient"></div>
+        <div class="cta-pattern"></div>
+      </div>
+      
+      <div class="cta-content">
+        <div class="cta-badge">
+          <span class="badge-line"></span>
+          <span class="badge-text">Ready to Begin?</span>
+          <span class="badge-line"></span>
+        </div>
+        
+        <h2 class="cta-title">
+          Let's Create Your
+          <span class="accent">Dream Space</span>
+        </h2>
+        
+        <p class="cta-description">
+          Transform your vision into reality with our award-winning design expertise.
+          Contact us today to begin your extraordinary interior design journey.
+        </p>
+        
+        <a href="contact.html" class="cta-button">
+          <span class="button-text">Start Your Project</span>
+          <span class="button-arrow">→</span>
+        </a>
+        
+        <div class="cta-signature">
+          <div class="signature-line"></div>
+          <div class="signature-dot"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="copyright">&copy; 2025 Meisner Interiors. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="project-modal">
+    <div class="modal-overlay" onclick="closeProjectModal()"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <button class="modal-close" onclick="closeProjectModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="modal-content">
+        <div class="gallery-container">
+          <div class="gallery-main">
+            <img id="mainGalleryImage" src="" alt="" class="main-image">
+            <div class="gallery-nav">
+              <button class="gallery-btn prev" onclick="previousImage()">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="gallery-btn next" onclick="nextImage()">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="gallery-thumbnails" id="galleryThumbnails">
+            <!-- Thumbnails will be populated by JavaScript -->
+          </div>
+        </div>
+        
+        <div class="project-info">
+          <div class="project-badge">
+            <span id="modalCategory" class="badge"></span>
+          </div>
+          <p id="modalDescription" class="modal-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay">
@@ -233,22 +534,19 @@
             <div class="mobile-menu-close">
                 <i class="fas fa-times"></i>
             </div>
-            <nav class="mobile-nav">
-                <a href="services.html" class="mobile-nav-link">Services</a>
-                <a href="portfolio.html" class="mobile-nav-link active">Portfolio</a>
-                <a href="about.html" class="mobile-nav-link">About</a>
-                <a href="contact.html" class="mobile-nav-link">Contact</a>
-            </nav>
-            
-            <div class="mobile-contact">
-                <p>Get in touch</p>
-                <a href="mailto:info@yourdesignstudio.com">info@yourdesignstudio.com</a>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </div>
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="portfolio.html" class="mobile-nav-link active">Portfolio</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
         </div>
     </div>
 
     <!-- JavaScript -->
+    <script src="js/protection.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>
