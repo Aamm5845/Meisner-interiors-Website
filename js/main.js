@@ -3,9 +3,8 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Wait for the entire page to load before running the intro.
-  // This ensures all HTML elements are available for the script.
-  runIntro();
+  // Skip intro animation - start directly with main content
+  initProjectSlideshow(); // Start slideshow immediately
 
   // Initialize logo click functionality
   initLogoClick();
@@ -20,21 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScrolling();
   initScrollEffects();
   
-  // Initialize custom cursor only for the main project page
-  if (window.location.pathname === '/' || 
-      window.location.pathname.includes('index.html') || 
-      window.location.pathname === '' || 
-      window.location.pathname.endsWith('/')) {
-    initCustomCursor();
-    initServicePanels();
-  }
+  // Custom cursor disabled to prevent white spot issues
+  // if (window.location.pathname === '/' || 
+  //     window.location.pathname.includes('index.html') || 
+  //     window.location.pathname === '' || 
+  //     window.location.pathname.endsWith('/')) {
+  //   initCustomCursor();
+  //   initServicePanels();
+  // }
   
   preloadImages(); // Preload images after DOM is ready
   manageFocus(); // Set up accessibility focus management
   initScrollAnimations(); // Initialize scroll animations
 });
 
-// --- LOGO CLICK: restart main page ---
+// --- LOGO CLICK: go to homepage ---
 function initLogoClick() {
   const logoIcon = document.querySelector('.nav-logo-icon');
   if (!logoIcon) return;
@@ -42,41 +41,12 @@ function initLogoClick() {
   logoIcon.addEventListener('click', function(e) {
     e.preventDefault();
     
-    // If we're on the main page, restart the intro animation
+    // If we're on the main page, reload to reset slideshow
     if (window.location.pathname === '/' || 
         window.location.pathname.includes('index.html') || 
         window.location.pathname === '' || 
         window.location.pathname.endsWith('/')) {
-      
-      // Reset the page state
-      const body = document.body;
-      const logoScreen = document.querySelector('.logo-animation-screen');
-      const logoImg = document.querySelector('#main-logo img');
-      
-      // Remove completed class
-      body.classList.remove('animation-complete');
-      
-      // Show logo screen and logo immediately
-      if (logoScreen) {
-        logoScreen.style.opacity = '1';
-        logoScreen.style.visibility = 'visible';
-      }
-      
-      if (logoImg) {
-        logoImg.style.opacity = '1';
-        logoImg.style.transition = 'none';
-      }
-      
-      // Hide main content
-      const mainContent = document.getElementById('main-content');
-      if (mainContent) {
-        mainContent.classList.add('content-hidden');
-      }
-      
-      // Restart the intro after a brief delay
-      setTimeout(() => {
-        runIntro();
-      }, 100);
+      window.location.reload();
     } else {
       // If we're on another page, go back to home
       window.location.href = 'index.html';
@@ -84,70 +54,8 @@ function initLogoClick() {
   });
 }
 
-// --- INTRO: simple logo display ---
-function runIntro() {
-  const body = document.body;
-  const logoScreen = document.querySelector('.logo-animation-screen');
-  const logoImg = document.querySelector('#main-logo img');
-  const curtainTransition = document.querySelector('.curtain-transition');
-
-  // Fallback if intro elements are missing
-  if (!logoScreen || !logoImg) {
-    body.classList.add('animation-complete');
-    initProjectSlideshow();
-    return;
-  }
-
-  // Show intro screen immediately
-  logoScreen.style.opacity = '1';
-  logoScreen.style.visibility = 'visible';
-  
-  // Trigger logo animation after a short delay
-  setTimeout(() => {
-    logoScreen.classList.add('show');
-    console.log('Logo animation started');
-  }, 300);
-
-  // After 4 seconds, start curtain transition
-  setTimeout(() => {
-    console.log('Starting curtain transition...');
-    
-    if (curtainTransition) {
-      // Step 1: Start logo exit animation
-      logoScreen.classList.add('exit');
-      console.log('Logo exit animation started...');
-      
-      // Step 2: Hide logo screen to reveal curtains after exit animation
-      setTimeout(() => {
-        logoScreen.style.opacity = '0';
-        logoScreen.style.visibility = 'hidden';
-        body.classList.add('animation-complete');
-        console.log('Logo hidden, revealing curtains...');
-        
-        // Step 3: Start opening curtains after a small delay
-        setTimeout(() => {
-          curtainTransition.classList.add('opening');
-          console.log('Curtains opening to reveal main content...');
-          
-          // Step 4: After curtains open, start slideshow
-          setTimeout(() => {
-            initProjectSlideshow();
-            console.log('Curtain transition complete!');
-          }, 1600); // Wait for opening animation
-        }, 200); // Small delay before opening
-      }, 1200); // Wait for logo exit animation
-    } else {
-      // Fallback without curtains
-      logoScreen.classList.add('exit');
-      setTimeout(() => {
-        logoScreen.style.opacity = '0';
-        logoScreen.style.visibility = 'hidden';
-        body.classList.add('animation-complete');
-        initProjectSlideshow();
-      }, 1200);
-    }
-  }, 4000);
-}
+// --- INTRO REMOVED FOR BETTER PERFORMANCE ---
+// Logo intro animation removed - slideshow starts immediately on page load
 
 // --- PROJECT SLIDESHOW ---
 function initProjectSlideshow() {

@@ -343,8 +343,8 @@ body.animation-complete [data-intro-hide] {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    /* Cool custom cursor only for this section */
-    cursor: none;
+    /* Custom cursor disabled */
+    cursor: default;
 }
 
 /* All other sections should have standard cursor */
@@ -362,32 +362,20 @@ body.animation-complete [data-intro-hide] {
     cursor: default !important;
 }
 
-/* Ensure project showcase maintains custom cursor capability */
+/* Project showcase uses default cursor for better UX */
 .project-showcase {
-    cursor: none !important;
+    cursor: default !important;
 }
 
 .project-showcase * {
-    cursor: none !important;
+    cursor: default !important;
 }
 
-/* Custom Cool Rounded Cursor - Only for project page */
+/* Custom cursor disabled to prevent white spot issues */
 .custom-cursor {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: all 0.15s ease;
-    backdrop-filter: blur(10px);
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
+    display: none !important;
+    /* Cursor disabled for better performance and to prevent sticky cursor issues */
 }
-
-/* Hide custom cursor when mobile menu is open */
 .mobile-menu-overlay.active ~ .custom-cursor,
 body:has(.mobile-menu-overlay.active) .custom-cursor {
     display: none !important;
@@ -442,7 +430,7 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
     background-position: center;
     background-repeat: no-repeat;
     transform: scale(1);
-    animation: projectZoom 25s ease-in-out infinite;
+    /* Animation removed for better performance */
 }
 
 .project-overlay {
@@ -451,44 +439,9 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 2;
-    /* Ultra-soft cursor spotlight with gradual fade */
-    mask: radial-gradient(circle 200px at var(--cursor-x, 50%) var(--cursor-y, 50%),
-        transparent 0px,
-        rgba(0,0,0,0.01) 20px,
-        rgba(0,0,0,0.02) 35px,
-        rgba(0,0,0,0.05) 45px,
-        rgba(0,0,0,0.08) 60px,
-        rgba(0,0,0,0.12) 75px,
-        rgba(0,0,0,0.18) 85px,
-        rgba(0,0,0,0.25) 100px,
-        rgba(0,0,0,0.35) 115px,
-        rgba(0,0,0,0.45) 125px,
-        rgba(0,0,0,0.55) 140px,
-        rgba(0,0,0,0.65) 155px,
-        rgba(0,0,0,0.75) 165px,
-        rgba(0,0,0,0.85) 180px,
-        rgba(0,0,0,0.95) 195px,
-        black 200px);
-    -webkit-mask: radial-gradient(circle 200px at var(--cursor-x, 50%) var(--cursor-y, 50%),
-        transparent 0px,
-        rgba(0,0,0,0.01) 20px,
-        rgba(0,0,0,0.02) 35px,
-        rgba(0,0,0,0.05) 45px,
-        rgba(0,0,0,0.08) 60px,
-        rgba(0,0,0,0.12) 75px,
-        rgba(0,0,0,0.18) 85px,
-        rgba(0,0,0,0.25) 100px,
-        rgba(0,0,0,0.35) 115px,
-        rgba(0,0,0,0.45) 125px,
-        rgba(0,0,0,0.55) 140px,
-        rgba(0,0,0,0.65) 155px,
-        rgba(0,0,0,0.75) 165px,
-        rgba(0,0,0,0.85) 180px,
-        rgba(0,0,0,0.95) 195px,
-        black 200px);
-    transition: mask 0.25s ease-out, -webkit-mask 0.25s ease-out;
+    /* Cursor mask removed - simple overlay for better performance */
 }
 
 /* Project Content (Left-Center) */
@@ -518,18 +471,13 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
     color: white;
     margin: 0;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    transform: translateX(-100px);
-    opacity: 0;
-    transition: all 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Animations removed - always visible */
+    transform: translateX(0);
+    opacity: 1;
     max-width: 800px;
 }
 
-/* Project title slide-in animation */
-.project-slide.active .project-title {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.8s;
-}
+/* Title animations removed for better performance */
 
 /* Title word styling - matching services page */
 .title-word {
