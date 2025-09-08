@@ -343,8 +343,8 @@ body.animation-complete [data-intro-hide] {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    /* Custom cursor disabled */
-    cursor: default;
+    /* Custom cursor enabled but simplified */
+    cursor: none;
 }
 
 /* All other sections should have standard cursor */
@@ -362,20 +362,33 @@ body.animation-complete [data-intro-hide] {
     cursor: default !important;
 }
 
-/* Project showcase uses default cursor for better UX */
+/* Project showcase uses custom cursor */
 .project-showcase {
-    cursor: default !important;
+    cursor: none !important;
 }
 
 .project-showcase * {
-    cursor: default !important;
+    cursor: none !important;
 }
 
-/* Custom cursor disabled to prevent white spot issues */
+/* Custom cursor with white spot issue fixed */
 .custom-cursor {
-    display: none !important;
-    /* Cursor disabled for better performance and to prevent sticky cursor issues */
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease;
+    backdrop-filter: blur(5px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
 }
+
+/* Hide cursor when mobile menu is open */
 .mobile-menu-overlay.active ~ .custom-cursor,
 body:has(.mobile-menu-overlay.active) .custom-cursor {
     display: none !important;
@@ -384,21 +397,12 @@ body:has(.mobile-menu-overlay.active) .custom-cursor {
 .custom-cursor.hover {
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-.custom-cursor::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
+/* WHITE SPOT REMOVED - this was causing the sticky issue */
+/* .custom-cursor::before was removed to fix white spot problem */
 
 .project-slider {
     position: relative;

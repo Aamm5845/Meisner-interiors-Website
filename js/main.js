@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScrolling();
   initScrollEffects();
   
-  // Custom cursor disabled to prevent white spot issues
-  // if (window.location.pathname === '/' || 
-  //     window.location.pathname.includes('index.html') || 
-  //     window.location.pathname === '' || 
-  //     window.location.pathname.endsWith('/')) {
-  //   initCustomCursor();
-  //   initServicePanels();
-  // }
+  // Initialize custom cursor only for the main project page
+  if (window.location.pathname === '/' || 
+      window.location.pathname.includes('index.html') || 
+      window.location.pathname === '' || 
+      window.location.pathname.endsWith('/')) {
+    initCustomCursor();
+    initServicePanels();
+  }
   
   preloadImages(); // Preload images after DOM is ready
   manageFocus(); // Set up accessibility focus management
