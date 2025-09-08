@@ -744,16 +744,14 @@ function initAdaptiveNavigation() {
   setTimeout(updateNavColor, 100);
 }
 
-// --- CUSTOM CURSOR ---
+// --- CUSTOM CURSOR (SIMPLIFIED) ---
 function initCustomCursor() {
   const cursor = document.querySelector('.custom-cursor');
   const projectShowcase = document.querySelector('.project-showcase');
-  const projectOverlays = document.querySelectorAll('.project-overlay');
   const hoverElements = document.querySelectorAll('.project-cta, .nav-item, .modern-hamburger');
   const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 
   if (!cursor) return;
-  cursor.style.opacity = '0';
 
   // Function to check if mobile menu is active
   function isMobileMenuActive() {
@@ -769,51 +767,6 @@ function initCustomCursor() {
     
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
-
-    if (projectShowcase) {
-      const rect = projectShowcase.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-      const edgeDistance = Math.min(
-        e.clientX - rect.left,
-        rect.right - e.clientX,
-        e.clientY - rect.top,
-        rect.bottom - e.clientY
-      );
-
-      const fadeThreshold = 100;
-      let spotlightSize = 200;
-      if (edgeDistance < fadeThreshold) {
-        const fadeRatio = Math.max(0.3, edgeDistance / fadeThreshold);
-        spotlightSize = 200 * fadeRatio;
-      }
-
-      const gradient = `radial-gradient(circle ${spotlightSize}px at var(--cursor-x, 50%) var(--cursor-y, 50%),
-        transparent 0px,
-        rgba(0,0,0,0.01) ${spotlightSize * 0.1}px,
-        rgba(0,0,0,0.02) ${spotlightSize * 0.17}px,
-        rgba(0,0,0,0.05) ${spotlightSize * 0.23}px,
-        rgba(0,0,0,0.08) ${spotlightSize * 0.3}px,
-        rgba(0,0,0,0.12) ${spotlightSize * 0.37}px,
-        rgba(0,0,0,0.18) ${spotlightSize * 0.43}px,
-        rgba(0,0,0,0.25) ${spotlightSize * 0.5}px,
-        rgba(0,0,0,0.35) ${spotlightSize * 0.57}px,
-        rgba(0,0,0,0.45) ${spotlightSize * 0.63}px,
-        rgba(0,0,0,0.55) ${spotlightSize * 0.7}px,
-        rgba(0,0,0,0.65) ${spotlightSize * 0.77}px,
-        rgba(0,0,0,0.75) ${spotlightSize * 0.83}px,
-        rgba(0,0,0,0.85) ${spotlightSize * 0.9}px,
-        rgba(0,0,0,0.95) ${spotlightSize * 0.97}px,
-        black ${spotlightSize}px)`;
-
-      projectOverlays.forEach(overlay => {
-        overlay.style.setProperty('--cursor-x', x + '%');
-        overlay.style.setProperty('--cursor-y', y + '%');
-        overlay.style.mask = gradient;
-        overlay.style.webkitMask = gradient;
-      });
-    }
   }
 
   if (projectShowcase) {
@@ -821,38 +774,13 @@ function initCustomCursor() {
       // Only show cursor if mobile menu is not active
       if (!isMobileMenuActive()) {
         cursor.style.opacity = '1';
-        document.body.style.cursor = 'none';
+        cursor.style.visibility = 'visible';
       }
-      projectOverlays.forEach(overlay => {
-        const gradient = `radial-gradient(circle 200px at var(--cursor-x, 50%) var(--cursor-y, 50%),
-          transparent 0px,
-          rgba(0,0,0,0.01) 20px,
-          rgba(0,0,0,0.02) 35px,
-          rgba(0,0,0,0.05) 45px,
-          rgba(0,0,0,0.08) 60px,
-          rgba(0,0,0,0.12) 75px,
-          rgba(0,0,0,0.18) 85px,
-          rgba(0,0,0,0.25) 100px,
-          rgba(0,0,0,0.35) 115px,
-          rgba(0,0,0,0.45) 125px,
-          rgba(0,0,0,0.55) 140px,
-          rgba(0,0,0,0.65) 155px,
-          rgba(0,0,0,0.75) 165px,
-          rgba(0,0,0,0.85) 180px,
-          rgba(0,0,0,0.95) 195px,
-          black 200px)`;
-        overlay.style.mask = gradient;
-        overlay.style.webkitMask = gradient;
-      });
     });
 
     projectShowcase.addEventListener('mouseleave', () => {
       cursor.style.opacity = '0';
-      document.body.style.cursor = 'default';
-      projectOverlays.forEach(overlay => {
-        overlay.style.mask = 'none';
-        overlay.style.webkitMask = 'none';
-      });
+      cursor.style.visibility = 'hidden';
     });
 
     projectShowcase.addEventListener('mousemove', updateCursor);
@@ -863,47 +791,23 @@ function initCustomCursor() {
     element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
 
-  // Global mouse movement to handle cursor and section detection
-  document.addEventListener('mousemove', function(e) {
-    updateCursor(e);
-    
-    // Check if we're over the project showcase
-    const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
-    const isOverProjectShowcase = projectShowcase && (projectShowcase.contains(elementUnderCursor) || elementUnderCursor === projectShowcase);
-    
-    if (!isMobileMenuActive()) {
-      if (isOverProjectShowcase) {
-        document.body.style.cursor = 'none';
-        if (cursor) cursor.style.opacity = '1';
-      } else {
-        document.body.style.cursor = 'default';
-        if (cursor) cursor.style.opacity = '0';
-      }
-    }
-  });
+  // Global mouse movement to handle cursor positioning
+  document.addEventListener('mousemove', updateCursor);
   
-  // Hide cursor when mobile menu opens and show when it closes
+  // Hide cursor when mobile menu opens
   if (mobileMenuOverlay) {
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           if (isMobileMenuActive()) {
             cursor.style.opacity = '0';
-            document.body.style.cursor = 'default';
-          } else {
-            // Keep default cursor behavior - let section-specific events handle it
-            if (!document.body.style.cursor || document.body.style.cursor === 'default') {
-              // Don't override if already set by section events
-            }
+            cursor.style.visibility = 'hidden';
           }
         }
       });
     });
     observer.observe(mobileMenuOverlay, { attributes: true });
   }
-  
-  // Set initial cursor state
-  document.body.style.cursor = 'default';
 }
 
 // --- PORTFOLIO PANEL CLICKS ---
