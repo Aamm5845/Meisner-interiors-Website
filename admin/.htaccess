@@ -1,0 +1,36 @@
+# Meisner Interiors Admin Security
+# Protect admin directory from unauthorized access
+
+# Prevent directory browsing
+Options -Indexes
+
+# Hide sensitive files
+<Files ~ "^\.">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect configuration files
+<FilesMatch "\.(conf|cfg|config|ini|log|bak)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Rate limiting (if mod_evasive is available)
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    2048
+    DOSPageCount        10
+    DOSPageInterval     1
+    DOSSiteCount        50
+    DOSSiteInterval     1
+    DOSBlockingPeriod   600
+</IfModule>
