@@ -20,19 +20,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function filterProjects(category) {
+        // Add filtering class for animation
         projectShowcases.forEach(project => {
-            if (category === 'all') {
-                // Show all projects
-                project.style.display = 'grid';
-            } else {
-                // Show only projects matching the category
-                if (project.classList.contains(category)) {
-                    project.style.display = 'grid';
-                } else {
-                    project.style.display = 'none';
-                }
-            }
+            project.classList.add('filtering');
         });
+        
+        // After a short delay, apply the filter
+        setTimeout(() => {
+            projectShowcases.forEach(project => {
+                if (category === 'all') {
+                    // Show all projects with important to override inline styles
+                    project.style.setProperty('display', 'grid', 'important');
+                    project.style.setProperty('opacity', '1', 'important');
+                    project.classList.remove('hidden');
+                    project.classList.remove('filtering');
+                } else {
+                    // Show only projects matching the category
+                    const hasCategory = project.classList.contains(category);
+                    
+                    if (hasCategory) {
+                        project.style.setProperty('display', 'grid', 'important');
+                        project.style.setProperty('opacity', '1', 'important');
+                        project.classList.remove('hidden');
+                        project.classList.remove('filtering');
+                    } else {
+                        project.style.setProperty('display', 'none', 'important');
+                        project.style.setProperty('opacity', '0', 'important');
+                        project.classList.add('hidden');
+                        project.classList.remove('filtering');
+                    }
+                }
+            });
+        }, 150);
     }
 
     // Initialize - show all projects by default
@@ -61,9 +80,16 @@ const projectData = {
         images: [
             'images/Master%20bedroom/Master%20Bedroom%20.jpg',
             'images/Master%20bedroom/Gross%20master.jpg',
-            'images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg',
-            'images/Master%20bedroom%202/BEDROOM%20IMG01%20062525.jpg',
-            'images/Master%20bedroom%202/BEDROOM%20IMG02%20062525.jpg'
+            'images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg'
+        ]
+    },
+    'master-suite-2': {
+        title: 'Premium Master Bedroom',
+        category: 'Master Suite',
+        description: 'A stunning master bedroom design showcasing luxurious finishes, custom furnishings, and serene ambiance perfect for ultimate comfort and relaxation.',
+        images: [
+            'images/Master%20bedroom%202/MASTER%20BEDROOM%20IMG%2001%20061925.jpg',
+            'images/Master%20bedroom%202/MASTER%20BEDROOM%20IMG%2002%20061925.jpg'
         ]
     },
     'study-room': {
@@ -72,22 +98,34 @@ const projectData = {
         description: 'A sophisticated workspace combining rich wood finishes, custom built-ins, and strategic lighting to create an inspiring environment for productivity and focus.',
         images: [
             'images/STUDY%20ROOM%20070725%20IMG01.jpg',
-            'images/Study%20room/STUDY%20ROOM%20IMG01%20070725.jpg',
-            'images/Study%20room/STUDY%20ROOM%20IMG02%20070725.jpg',
-            'images/Study%20room/STUDY%20ROOM%20IMG03%20070725.jpg'
+            'images/Study%20room/STUDY%20ROOM%20070725%20IMG01.jpg',
+            'images/Study%20room/STUDY%20ROOM%20070725%20IMG02.jpg'
         ]
     },
-    'kitchen-modern': {
-        title: 'Contemporary Kitchen',
+    'kitchen-2': {
+        title: 'Modern Kitchen Design',
         category: 'Culinary Space',
-        description: 'A modern culinary space featuring sleek cabinetry, premium appliances, and innovative storage solutions designed for both functionality and aesthetic appeal.',
+        description: 'A sleek modern kitchen featuring contemporary cabinetry, premium appliances, and thoughtful design elements that create both functionality and visual appeal.',
         images: [
             'images/kitchen%202/KITCHEN%20IMG01%20082525.jpg',
-            'images/kitchen%202/KITCHEN%20IMG03%20082525.jpg',
-            'images/Kitchen%203/KITCHEN%20IMG01%20062525.jpg',
-            'images/Kitchen%203/KITCHEN%20IMG02%20062525.jpg',
-            'images/Kitchen4/KITCHEN%20IMG01%20072525.jpg',
-            'images/Kitchen4/KITCHEN%20IMG02%20072525.jpg'
+            'images/kitchen%202/KITCHEN%20IMG03%20082525.jpg'
+        ]
+    },
+    'kitchen-3': {
+        title: 'Contemporary Kitchen',
+        category: 'Culinary Space',
+        description: 'An elegant kitchen space showcasing modern design principles with clean lines, sophisticated finishes, and optimal functionality for daily living.',
+        images: [
+            'images/Kitchen%203/k1.jpg',
+            'images/Kitchen%203/k3.jpg'
+        ]
+    },
+    'kitchen-4': {
+        title: 'Luxury Kitchen Suite',
+        category: 'Culinary Space',
+        description: 'A premium kitchen design featuring high-end materials, custom details, and innovative solutions that elevate the culinary experience.',
+        images: [
+            'images/Kitchen4/WhatsApp%20Image%202025-03-30%20at%2019.38.27_04742752.jpg'
         ]
     },
     'staircase': {
@@ -96,10 +134,9 @@ const projectData = {
         description: 'A striking architectural centerpiece featuring clean lines, premium materials, and dramatic lighting that transforms circulation into a sculptural design element.',
         images: [
             'images/STAIRCASE%20IMG%2002%20052825.jpg',
-            'images/Staircase/STAIRCASE%20IMG01%20052825.jpg',
-            'images/Staircase/STAIRCASE%20IMG03%20052825.jpg',
-            'images/Staircase%202/STAIRCASE%20IMG01%20062825.jpg',
-            'images/Staircase%202/STAIRCASE%20IMG02%20062825.jpg'
+            'images/Staircase/oo.jpg',
+            'images/Staircase%202/Lefkowitz%20Powder%20Vanity.jpg',
+            'images/Staircase%202/Rounded%20Staire%20Case.jpg'
         ]
     },
     'dining-room': {
@@ -107,9 +144,8 @@ const projectData = {
         category: 'Dining Experience',
         description: 'A sophisticated dining space designed for memorable gatherings, featuring elegant furnishings, refined lighting, and carefully curated details that enhance the dining experience.',
         images: [
-            'images/Dining%20room/DINING%20ROOM%20IMG01%20062525.jpg',
-            'images/Dining%20room/DINING%20ROOM%20IMG02%20062525.jpg',
-            'images/Dining%20room/DINING%20ROOM%20IMG03%20062525.jpg'
+            'images/Dining%20room/DINING%20ROOM%2026%2012%202022.jpg',
+            'images/Dining%20room/WhatsApp%20Image%202023-01-31%20at%2011.50.09.jpg'
         ]
     },
     'basement': {
@@ -117,21 +153,17 @@ const projectData = {
         category: 'Entertainment Space',
         description: 'A sophisticated lower-level entertainment area featuring custom built-ins, premium finishes, and thoughtful lighting design that creates the perfect space for relaxation and entertaining.',
         images: [
-            'images/Basement/BASEMENT%20IMG01%20062825.jpg',
-            'images/Basement/BASEMENT%20IMG02%20062825.jpg',
-            'images/Basement/BASEMENT%20IMG03%20062825.jpg',
-            'images/Basment%202/BASEMENT%20IMG01%20072525.jpg',
-            'images/Basment%202/BASEMENT%20IMG02%20072525.jpg'
+            'images/Basement/gross%20-toycloset.jpg'
         ]
     },
-    'entrance': {
-        title: 'Welcoming Foyer',
-        category: 'Grand Entrance',
-        description: 'An impressive entrance that sets the tone for the entire home, featuring dramatic design elements, custom millwork, and strategic lighting that creates a memorable first impression.',
+    'basement-2': {
+        title: 'Modern Basement Retreat',
+        category: 'Entertainment Space',
+        description: 'A contemporary basement design featuring comfortable furnishings, stylish decor, and versatile spaces perfect for family gatherings and entertainment.',
         images: [
-            'images/Entrence/ENTRENCE%20IMG01%20072525.jpg',
-            'images/Entrence/ENTRENCE%20IMG02%20072525.jpg',
-            'images/Entrence/ENTRENCE%20IMG03%20072525.jpg'
+            'images/Basment%202/IMG-20241031-WA0007.jpg',
+            'images/Basment%202/IMG-20241031-WA0009.jpg',
+            'images/Basment%202/WhatsApp%20Image%202024-11-05%20at%2015.28.01_28a3b316.jpg'
         ]
     },
     
@@ -141,9 +173,7 @@ const projectData = {
         category: 'Corporate Office',
         description: 'A professional office environment designed for productivity and success, featuring modern furnishings, efficient layouts, and sophisticated finishes that reflect corporate excellence.',
         images: [
-            'images/Office/OFFICE%20IMG01%20072525.jpg',
-            'images/Office/OFFICE%20IMG02%20072525.jpg',
-            'images/Office/OFFICE%20IMG03%20072525.jpg'
+            'images/Office/Basement%20Sefurim%20Room.jpg'
         ]
     },
     'ballroom': {
@@ -156,8 +186,7 @@ const projectData = {
             'images/Ballroom/BALLROOM%20IMG04%20081925.jpg',
             'images/Ballroom/BALLROOM%20IMG05%20081925.jpg',
             'images/Ballroom.jpg',
-            'images/Ballroom%202/BALLROOM%20IMG01%20081925.jpg',
-            'images/Ballroom%202/BALLROOM%20IMG02%20081925.jpg'
+            'images/Ballroom%202/BALLROOM%2004%2028.jpg'
         ]
     },
     'lobby': {
@@ -165,9 +194,8 @@ const projectData = {
         category: 'Hospitality Design',
         description: 'A sophisticated lobby design that welcomes guests with elegance and comfort, featuring premium materials, thoughtful seating arrangements, and artistic elements that create a memorable hospitality experience.',
         images: [
-            'images/Lobby/LOBBY%20IMG01%20072525.jpg',
-            'images/Lobby/LOBBY%20IMG02%20072525.jpg',
-            'images/Lobby/LOBBY%20IMG03%20072525.jpg'
+            'images/Lobby/WhatsApp%20Image%202024-11-13%20at%2015.14.11_f1f46e5f.jpg',
+            'images/Lobby/WhatsApp%20Image%202024-11-13%20at%2015.14.11_bb6a910f.jpg'
         ]
     },
     'grocery': {
@@ -175,9 +203,9 @@ const projectData = {
         category: 'Retail Design',
         description: 'A modern retail space designed for optimal shopping experience, featuring efficient layouts, attractive displays, and premium finishes that enhance the customer journey and brand image.',
         images: [
-            'images/Grocery/GROCERY%20IMG01%20072525.jpg',
-            'images/Grocery/GROCERY%20IMG02%20072525.jpg',
-            'images/Grocery/GROCERY%20IMG03%20072525.jpg'
+            'images/Grocery/FRONT%2001.jpg',
+            'images/Grocery/BAKERY%20SIDE.jpg',
+            'images/Grocery/ENTRANCE%20DIAG..jpg'
         ]
     },
     
@@ -188,11 +216,6 @@ const projectData = {
         description: 'A vibrant and safe play environment designed to stimulate creativity and learning through thoughtful space planning, colorful elements, and child-friendly materials.',
         images: [
             'images/Playground%201%20s.jpg',
-            'images/Playground%202%20s.jpg',
-            'images/Playground%203%20s.jpg',
-            'images/Playground%204%20s.jpg',
-            'images/Playground%205%20s.jpg',
-            'images/Playground%207%20s.jpg',
             'images/pLAYGROUND/FUN%20CORNER%2001.jpg',
             'images/pLAYGROUND/FUN%20CORNER%2002.jpg',
             'images/pLAYGROUND/FUN%20CORNER%2003.jpg',
@@ -205,26 +228,32 @@ const projectData = {
         category: 'Sacred Space',
         description: 'A serene and sacred space designed with respect for tradition and modern comfort, featuring natural materials, calming colors, and thoughtful details that enhance the spiritual experience.',
         images: [
-            'images/Mikvah/MIKVAH%20IMG01%20062825.jpg',
             'images/Mikvah/mikvah2.jpg',
             'images/Mikvah/MKV%2004.jpg',
             'images/Mikvah/MKV%2005.jpg',
-            'images/Mikvah/NEW%20LOBBY2.jpg',
-            'images/Mikvah%202/MIKVAH%20IMG01%20072525.jpg',
-            'images/Mikvah%202/MIKVAH%20IMG02%20072525.jpg',
-            'images/mikvah%20booth.jpg',
-            'images/booth%20mikvah.jpg',
-            'images/booth%20mikvah2.jpg'
+            'images/Mikvah/NEW%20LOBBY2.jpg'
+        ]
+    },
+    'mikvah-2': {
+        title: 'Sacred Mikvah Retreat',
+        category: 'Sacred Space',
+        description: 'A beautifully designed mikvah facility combining traditional elements with contemporary comfort, creating a peaceful and dignified environment for spiritual purification.',
+        images: [
+            'images/Mikvah%202/IMG-20241011-WA0015.jpg',
+            'images/Mikvah%202/IMG-20241011-WA0017.jpg',
+            'images/Mikvah%202/IMG-20241011-WA0019.jpg',
+            'images/Mikvah%202/IMG-20241011-WA0020.jpg',
+            'images/Mikvah%202/IMG-20241011-WA0021.jpg',
+            'images/Mikvah%202/IMG-20241011-WA0024.jpg'
         ]
     },
     'sukkah': {
         title: 'Elegant Sukkah',
-        category: 'Festival Space',
+        category: 'Seasonal Sanctuary',
         description: 'A beautifully designed temporary structure that honors tradition while providing comfort and style, featuring natural elements, thoughtful lighting, and decorative details that create a warm gathering space.',
         images: [
-            'images/Sukkah/SUKKAH%20IMG01%20092625.jpg',
-            'images/Sukkah/SUKKAH%20IMG02%20092625.jpg',
-            'images/Sukkah/SUKKAH%20IMG03%20092625.jpg'
+            'images/Sukkah/IMG-20250721-WA0001.jpg',
+            'images/Sukkah/IMG-20250721-WA0004.jpg'
         ]
     }
 };

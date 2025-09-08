@@ -179,10 +179,22 @@
     align-items: center !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
     height: auto !important;
     position: static !important;
     overflow: visible !important;
     cursor: default !important;
+}
+
+/* Portfolio filtering states */
+.portfolio-page .portfolio-showcase .project-showcase.hidden {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.portfolio-page .portfolio-showcase .project-showcase.filtering {
+    opacity: 0.3 !important;
+    transform: translateY(10px) !important;
 }
 
 .portfolio-page .portfolio-showcase .project-showcase * {

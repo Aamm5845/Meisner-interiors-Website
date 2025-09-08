@@ -6,23 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="description" content="Explore Meisner Interiors' portfolio of extraordinary interior design projects spanning Montreal, New York, and Israel. Premium residential and commercial spaces.">
+    <meta name="keywords" content="interior design, luxury homes, commercial spaces, Montreal interior designer, New York interior design, residential design, portfolio">
+    <meta name="author" content="Meisner Interiors">
     <meta name="robots" content="index, follow">
     
-    <!-- Favicon -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio - Meisner Interiors | Luxury Design Showcase">
+    <meta property="og:description" content="Explore our portfolio of extraordinary interior design projects spanning residential, commercial, and communal spaces across Montreal, New York, and Israel.">
+    <meta property="og:image" content="images/Master%20bedroom/Master%20Bedroom%20.jpg">
+    <meta property="og:url" content="https://meisnerinteriors.com/portfolio.html">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Portfolio - Meisner Interiors | Luxury Design Showcase">
+    <meta property="twitter:description" content="Explore our portfolio of extraordinary interior design projects spanning residential, commercial, and communal spaces.">
+    <meta property="twitter:image" content="images/Master%20bedroom/Master%20Bedroom%20.jpg">
+    
+    <!-- Favicon Package -->
     <link rel="icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="Font/stylesheet.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/portfolio.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" crossorigin>
     
     <!-- CSS -->
     <link rel="stylesheet" href="Font/stylesheet.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/protection.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preload Critical JavaScript -->
+    <link rel="modulepreload" href="js/main.js">
+    <link rel="modulepreload" href="js/portfolio.js">
+    <link rel="modulepreload" href="js/protection.js">
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
 </head>
 
 <body class="portfolio-page">
@@ -103,10 +144,10 @@
       <div class="showcase-container" style="padding: 0 2rem;">
         <!-- RESIDENTIAL PROJECTS -->
         
-        <!-- Master Suite Collection -->
+        <!-- 1. Master Suite - IMAGE LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-image" data-project="master-suite" onclick="openProjectModal('master-suite')">
-            <img src="images/Master%20bedroom/Master%20Bedroom%20.jpg" alt="Luxury Master Suite Design" loading="lazy">
+            <img src="images/Master%20bedroom/Master%20Bedroom%20.jpg" alt="Luxury Master Suite Design" loading="lazy" width="600" height="400" decoding="async">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -127,20 +168,20 @@
           </div>
         </div>
         
-        <!-- Executive Study -->
+        <!-- 2. Premium Master Bedroom - CONTENT LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-content order-first">
             <div class="project-badge">
-              <span class="badge">Executive Study</span>
+              <span class="badge">Master Suite</span>
             </div>
-            <h3 class="project-title">Professional Home Office</h3>
+            <h3 class="project-title">Premium Master Bedroom</h3>
             <p class="project-description">
-              A sophisticated workspace combining rich wood finishes, custom built-ins, 
-              and strategic lighting to create an inspiring environment for productivity and focus.
+              A stunning master bedroom design showcasing luxurious finishes, custom furnishings, 
+              and serene ambiance perfect for ultimate comfort and relaxation.
             </p>
           </div>
-          <div class="showcase-image" data-project="study-room" onclick="openProjectModal('study-room')">
-            <img src="images/STUDY%20ROOM%20070725%20IMG01.jpg" alt="Executive Study Room Design" loading="lazy">
+          <div class="showcase-image" data-project="master-suite-2" onclick="openProjectModal('master-suite-2')">
+            <img src="images/Master%20bedroom%202/MASTER%20BEDROOM%20IMG%2001%20061925.jpg" alt="Premium Master Bedroom Design" loading="lazy" width="600" height="400" decoding="async">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -151,10 +192,58 @@
           </div>
         </div>
         
-        <!-- Modern Kitchen Design -->
+        <!-- 3. Executive Study - IMAGE LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-image" data-project="kitchen-modern" onclick="openProjectModal('kitchen-modern')">
-            <img src="images/kitchen%202/KITCHEN%20IMG01%20082525.jpg" alt="Modern Kitchen Design" loading="lazy">
+          <div class="showcase-image" data-project="study-room" onclick="openProjectModal('study-room')">
+            <img src="images/STUDY%20ROOM%20070725%20IMG01.jpg" alt="Executive Study Room Design" loading="lazy" width="600" height="400" decoding="async">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Executive Study</span>
+            </div>
+            <h3 class="project-title">Professional Home Office</h3>
+            <p class="project-description">
+              A sophisticated workspace combining rich wood finishes, custom built-ins, 
+              and strategic lighting to create an inspiring environment for productivity and focus.
+            </p>
+          </div>
+        </div>
+        
+        <!-- 4. Modern Kitchen - CONTENT LEFT -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Culinary Space</span>
+            </div>
+            <h3 class="project-title">Modern Kitchen Design</h3>
+            <p class="project-description">
+              A sleek modern kitchen featuring contemporary cabinetry, premium appliances, 
+              and thoughtful design elements that create both functionality and visual appeal.
+            </p>
+          </div>
+          <div class="showcase-image" data-project="kitchen-2" onclick="openProjectModal('kitchen-2')">
+            <img src="images/kitchen%202/KITCHEN%20IMG01%20082525.jpg" alt="Modern Kitchen Design" loading="lazy" width="600" height="400" decoding="async">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 5. Kitchen 3 - IMAGE LEFT -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="kitchen-3" onclick="openProjectModal('kitchen-3')">
+            <img src="images/Kitchen%203/k1.jpg" alt="Contemporary Kitchen Design" loading="lazy" width="600" height="400" decoding="async">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -169,24 +258,38 @@
             </div>
             <h3 class="project-title">Contemporary Kitchen</h3>
             <p class="project-description">
-              A modern culinary space featuring sleek cabinetry, premium appliances, 
-              and innovative storage solutions designed for both functionality and aesthetic appeal.
+              An elegant kitchen space showcasing modern design principles with clean lines, 
+              sophisticated finishes, and optimal functionality for daily living.
             </p>
           </div>
         </div>
         
-        <!-- Architectural Staircase -->
+        <!-- 6. Kitchen 4 - CONTENT LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-content order-first">
             <div class="project-badge">
-              <span class="badge">Architectural Feature</span>
+              <span class="badge">Culinary Space</span>
             </div>
-            <h3 class="project-title">Statement Staircase</h3>
+            <h3 class="project-title">Luxury Kitchen Suite</h3>
             <p class="project-description">
-              A striking architectural centerpiece featuring clean lines, premium materials, 
-              and dramatic lighting that transforms circulation into a sculptural design element.
+              A premium kitchen design featuring high-end materials, custom details, 
+              and innovative solutions that elevate the culinary experience.
             </p>
           </div>
+          <div class="showcase-image" data-project="kitchen-4" onclick="openProjectModal('kitchen-4')">
+            <img src="images/Kitchen4/WhatsApp%20Image%202025-03-30%20at%2019.38.27_04742752.jpg" alt="Luxury Kitchen Suite Design" loading="lazy" width="600" height="400" decoding="async">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 7. Staircase - IMAGE LEFT -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-image" data-project="staircase" onclick="openProjectModal('staircase')">
             <img src="images/STAIRCASE%20IMG%2002%20052825.jpg" alt="Architectural Staircase Design" loading="lazy">
             <div class="image-overlay">
@@ -197,21 +300,21 @@
               </div>
             </div>
           </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Architectural Feature</span>
+            </div>
+            <h3 class="project-title">Statement Staircase</h3>
+            <p class="project-description">
+              A striking architectural centerpiece featuring clean lines, premium materials, 
+              and dramatic lighting that transforms circulation into a sculptural design element.
+            </p>
+          </div>
         </div>
 
-        <!-- Elegant Dining Room -->
+        <!-- 8. Dining Room - CONTENT LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-image" data-project="dining-room" onclick="openProjectModal('dining-room')">
-            <img src="images/Dining%20room/DINING%20ROOM%20IMG01%20062525.jpg" alt="Elegant Dining Room Design" loading="lazy">
-            <div class="image-overlay">
-              <div class="overlay-gradient"></div>
-              <div class="view-more-hint">
-                <i class="fas fa-expand-alt"></i>
-                <span>View Gallery</span>
-              </div>
-            </div>
-          </div>
-          <div class="showcase-content">
+          <div class="showcase-content order-first">
             <div class="project-badge">
               <span class="badge">Dining Experience</span>
             </div>
@@ -221,22 +324,8 @@
               refined lighting, and carefully curated details that enhance the dining experience.
             </p>
           </div>
-        </div>
-
-        <!-- Basement Entertainment -->
-        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-content order-first">
-            <div class="project-badge">
-              <span class="badge">Entertainment Space</span>
-            </div>
-            <h3 class="project-title">Luxury Basement Lounge</h3>
-            <p class="project-description">
-              A sophisticated lower-level entertainment area featuring custom built-ins, premium finishes, 
-              and thoughtful lighting design that creates the perfect space for relaxation and entertaining.
-            </p>
-          </div>
-          <div class="showcase-image" data-project="basement" onclick="openProjectModal('basement')">
-            <img src="images/Basement/BASEMENT%20IMG01%20062825.jpg" alt="Luxury Basement Entertainment Space" loading="lazy">
+          <div class="showcase-image" data-project="dining-room" onclick="openProjectModal('dining-room')">
+            <img src="images/Dining%20room/DINING%20ROOM%2026%2012%202022.jpg" alt="Elegant Dining Room Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -247,10 +336,10 @@
           </div>
         </div>
 
-        <!-- Grand Entrance -->
+        <!-- 9. Basement - IMAGE LEFT -->
         <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-image" data-project="entrance" onclick="openProjectModal('entrance')">
-            <img src="images/Entrence/ENTRENCE%20IMG01%20072525.jpg" alt="Grand Entrance Design" loading="lazy">
+          <div class="showcase-image" data-project="basement" onclick="openProjectModal('basement')">
+            <img src="images/Basement/gross%20-toycloset.jpg" alt="Luxury Basement Entertainment Space" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -261,30 +350,30 @@
           </div>
           <div class="showcase-content">
             <div class="project-badge">
-              <span class="badge">Grand Entrance</span>
+              <span class="badge">Entertainment Space</span>
             </div>
-            <h3 class="project-title">Welcoming Foyer</h3>
+            <h3 class="project-title">Luxury Basement Lounge</h3>
             <p class="project-description">
-              An impressive entrance that sets the tone for the entire home, featuring dramatic design elements, 
-              custom millwork, and strategic lighting that creates a memorable first impression.
+              A sophisticated lower-level entertainment area featuring custom built-ins, premium finishes, 
+              and thoughtful lighting design that creates the perfect space for relaxation and entertaining.
             </p>
           </div>
         </div>
 
-        <!-- Professional Office -->
-        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+        <!-- 10. Basement 2 - CONTENT LEFT -->
+        <div class="project-showcase residential" data-category="residential" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-content order-first">
             <div class="project-badge">
-              <span class="badge">Corporate Office</span>
+              <span class="badge">Entertainment Space</span>
             </div>
-            <h3 class="project-title">Executive Workspace</h3>
+            <h3 class="project-title">Modern Basement Retreat</h3>
             <p class="project-description">
-              A professional office environment designed for productivity and success, featuring modern furnishings, 
-              efficient layouts, and sophisticated finishes that reflect corporate excellence.
+              A contemporary basement design featuring comfortable furnishings, stylish decor, 
+              and versatile spaces perfect for family gatherings and entertainment.
             </p>
           </div>
-          <div class="showcase-image" data-project="office" onclick="openProjectModal('office')">
-            <img src="images/Office/OFFICE%20IMG01%20072525.jpg" alt="Professional Office Design" loading="lazy">
+          <div class="showcase-image" data-project="basement-2" onclick="openProjectModal('basement-2')">
+            <img src="images/Basment%202/IMG-20241031-WA0007.jpg" alt="Modern Basement Retreat Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -294,11 +383,36 @@
             </div>
           </div>
         </div>
+
+
+        <!-- Professional Office -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="office" onclick="openProjectModal('office')">
+            <img src="images/Office/Basement%20Sefurim%20Room.jpg" alt="Professional Office Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Corporate Office</span>
+            </div>
+            <h3 class="project-title">Executive Workspace</h3>
+            <p class="project-description">
+              A professional office environment designed for productivity and success, featuring modern furnishings, 
+              efficient layouts, and sophisticated finishes that reflect corporate excellence.
+            </p>
+          </div>
+        </div>
         
         <!-- Grand Ballroom -->
         <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-image" data-project="ballroom" onclick="openProjectModal('ballroom')">
-            <img src="images/Ballroom/BALLROOM%20IMG01%20081925.jpg" alt="Grand Ballroom Design" loading="lazy">
+            <img src="images/Ballroom/BALLROOM%20IMG03%20081925.jpg" alt="Grand Ballroom Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -319,34 +433,10 @@
           </div>
         </div>
         
-        <!-- Hotel Lobby -->
+        <!-- 13. Lobby - IMAGE LEFT -->
         <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-content order-first">
-            <div class="project-badge">
-              <span class="badge">Hospitality Design</span>
-            </div>
-            <h3 class="project-title">Grand Hotel Lobby</h3>
-            <p class="project-description">
-              A sophisticated lobby design that welcomes guests with elegance and comfort, featuring premium materials, 
-              thoughtful seating arrangements, and artistic elements that create a memorable hospitality experience.
-            </p>
-          </div>
           <div class="showcase-image" data-project="lobby" onclick="openProjectModal('lobby')">
-            <img src="images/Lobby/LOBBY%20IMG01%20072525.jpg" alt="Luxury Hotel Lobby Design" loading="lazy">
-            <div class="image-overlay">
-              <div class="overlay-gradient"></div>
-              <div class="view-more-hint">
-                <i class="fas fa-expand-alt"></i>
-                <span>View Gallery</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Specialty Grocery -->
-        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-image" data-project="grocery" onclick="openProjectModal('grocery')">
-            <img src="images/Grocery/GROCERY%20IMG01%20072525.jpg" alt="Modern Grocery Store Design" loading="lazy">
+            <img src="images/Lobby/WhatsApp%20Image%202024-11-13%20at%2015.14.11_f1f46e5f.jpg" alt="Luxury Hotel Lobby Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -357,6 +447,20 @@
           </div>
           <div class="showcase-content">
             <div class="project-badge">
+              <span class="badge">Hospitality Design</span>
+            </div>
+            <h3 class="project-title">Grand Hotel Lobby</h3>
+            <p class="project-description">
+              A sophisticated lobby design that welcomes guests with elegance and comfort, featuring premium materials, 
+              thoughtful seating arrangements, and artistic elements that create a memorable hospitality experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- 14. Grocery - CONTENT LEFT -->
+        <div class="project-showcase commercial" data-category="commercial" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
               <span class="badge">Retail Design</span>
             </div>
             <h3 class="project-title">Premium Market</h3>
@@ -365,24 +469,8 @@
               attractive displays, and premium finishes that enhance the customer journey and brand image.
             </p>
           </div>
-        </div>
-        
-        <!-- COMMUNAL PROJECTS -->
-        
-        <!-- Children's Playground -->
-        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
-          <div class="showcase-content order-first">
-            <div class="project-badge">
-              <span class="badge">Play Environment</span>
-            </div>
-            <h3 class="project-title">Interactive Playground</h3>
-            <p class="project-description">
-              A vibrant and safe play environment designed to stimulate creativity and learning 
-              through thoughtful space planning, colorful elements, and child-friendly materials.
-            </p>
-          </div>
-          <div class="showcase-image" data-project="playground" onclick="openProjectModal('playground')">
-            <img src="images/Playground%201%20s.jpg" alt="Creative Children's Playground Design" loading="lazy">
+          <div class="showcase-image" data-project="grocery" onclick="openProjectModal('grocery')">
+            <img src="images/Grocery/FRONT%2001.jpg" alt="Modern Grocery Store Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -393,10 +481,60 @@
           </div>
         </div>
         
-        <!-- Sacred Mikvah Space -->
+        <!-- COMMUNAL PROJECTS -->
+        
+        <!-- 15. Playground - IMAGE LEFT -->
         <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="playground" onclick="openProjectModal('playground')">
+            <img src="images/Playground%201%20s.jpg" alt="Creative Children's Playground Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-content">
+            <div class="project-badge">
+              <span class="badge">Play Environment</span>
+            </div>
+            <h3 class="project-title">Interactive Playground</h3>
+            <p class="project-description">
+              A vibrant and safe play environment designed to stimulate creativity and learning 
+              through thoughtful space planning, colorful elements, and child-friendly materials.
+            </p>
+          </div>
+        </div>
+        
+        <!-- 16. Mikvah - CONTENT LEFT -->
+        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-content order-first">
+            <div class="project-badge">
+              <span class="badge">Sacred Space</span>
+            </div>
+            <h3 class="project-title">Mikvah Sanctuary</h3>
+            <p class="project-description">
+              A serene and sacred space designed with respect for tradition and modern comfort, 
+              featuring natural materials, calming colors, and thoughtful details that enhance the spiritual experience.
+            </p>
+          </div>
           <div class="showcase-image" data-project="mikvah" onclick="openProjectModal('mikvah')">
-            <img src="images/Mikvah/MIKVAH%20IMG01%20062825.jpg" alt="Sacred Mikvah Design" loading="lazy">
+            <img src="images/Mikvah/mikvah2.jpg" alt="Sacred Mikvah Design" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-gradient"></div>
+              <div class="view-more-hint">
+                <i class="fas fa-expand-alt"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 17. Mikvah 2 - IMAGE LEFT -->
+        <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
+          <div class="showcase-image" data-project="mikvah-2" onclick="openProjectModal('mikvah-2')">
+            <img src="images/Mikvah%202/IMG-20241011-WA0015.jpg" alt="Modern Mikvah Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -409,15 +547,15 @@
             <div class="project-badge">
               <span class="badge">Sacred Space</span>
             </div>
-            <h3 class="project-title">Mikvah Sanctuary</h3>
+            <h3 class="project-title">Sacred Mikvah Retreat</h3>
             <p class="project-description">
-              A serene and sacred space designed with respect for tradition and modern comfort, 
-              featuring natural materials, calming colors, and thoughtful details that enhance the spiritual experience.
+              A beautifully designed mikvah facility combining traditional elements with contemporary comfort, 
+              creating a peaceful and dignified environment for spiritual purification.
             </p>
           </div>
         </div>
 
-        <!-- Seasonal Sukkah -->
+        <!-- 18. Sukkah - CONTENT LEFT -->
         <div class="project-showcase communal" data-category="communal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; align-items: center;">
           <div class="showcase-content order-first">
             <div class="project-badge">
@@ -430,7 +568,7 @@
             </p>
           </div>
           <div class="showcase-image" data-project="sukkah" onclick="openProjectModal('sukkah')">
-            <img src="images/Sukkah/SUKKAH%20IMG01%20092625.jpg" alt="Elegant Sukkah Design" loading="lazy">
+            <img src="images/Sukkah/IMG-20250721-WA0001.jpg" alt="Elegant Sukkah Design" loading="lazy">
             <div class="image-overlay">
               <div class="overlay-gradient"></div>
               <div class="view-more-hint">
@@ -544,9 +682,45 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/protection.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/portfolio.js"></script>
+    <!-- JavaScript - Optimized Loading -->
+    <script src="js/protection.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/portfolio.js" defer></script>
+    
+    <!-- Performance monitoring -->
+    <script>
+        // Critical path performance measurement
+        if ('performance' in window && 'mark' in performance) {
+            performance.mark('portfolio-loaded');
+        }
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Meisner Interiors Portfolio",
+        "description": "Portfolio of luxury interior design projects by Meisner Interiors",
+        "numberOfItems": 18,
+        "itemListElement": [
+            {
+                "@type": "CreativeWork",
+                "name": "Luxury Master Suite",
+                "description": "Elegant master bedroom featuring sophisticated design elements",
+                "image": "images/Master%20bedroom/Master%20Bedroom%20.jpg",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Meisner Interiors"
+                }
+            }
+        ],
+        "provider": {
+            "@type": "Organization",
+            "name": "Meisner Interiors",
+            "url": "https://meisnerinteriors.com"
+        }
+    }
+    </script>
 </body>
 </html>
