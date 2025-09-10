@@ -471,35 +471,46 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Enter' && e.target.classList.contains('filter-btn')) e.target.click();
 });
 
+// Global observers to prevent multiple instances
+let scrollAnimationObserver = null;
+let aboutAnimationObserver = null;
+let teamAnimationObserver = null;
+
 // --- SCROLL ANIMATIONS ---
 function initScrollAnimations() {
+  // Clear any existing observers first
+  if (scrollAnimationObserver) {
+    scrollAnimationObserver.disconnect();
+  }
+  if (aboutAnimationObserver) {
+    aboutAnimationObserver.disconnect();
+  }
+  if (teamAnimationObserver) {
+    teamAnimationObserver.disconnect();
+  }
+  
   const animateElements = document.querySelectorAll('[data-scroll-animate]');
   
   if (animateElements.length === 0) {
-    console.log('No scroll animate elements found');
     return;
   }
-  
-  console.log(`Found ${animateElements.length} elements to animate`);
   
   const observerOptions = {
     threshold: 0.2,
     rootMargin: '0px 0px -100px 0px'
   };
   
-  const observer = new IntersectionObserver((entries) => {
+  scrollAnimationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const element = entry.target;
         const delay = element.getAttribute('data-scroll-delay') || 0;
         
-        console.log(`Animating element with delay: ${delay}ms`);
-        
         setTimeout(() => {
           element.classList.add('animate');
         }, parseInt(delay));
         
-        observer.unobserve(element);
+        scrollAnimationObserver.unobserve(element);
       }
     });
   }, observerOptions);
@@ -507,165 +518,75 @@ function initScrollAnimations() {
   animateElements.forEach(element => {
     // Reset any existing animation classes
     element.classList.remove('animate');
-    observer.observe(element);
+    scrollAnimationObserver.observe(element);
   });
   
-  // Snake border animation for about section
+  // Initialize background text animations
   initSnakeBorderAnimation();
-  
-  // Initialize background text animations for team section
   initTeamBackgroundAnimation();
-  
-  // Initialize ABOUT background text animation
   initAboutBackgroundAnimation();
 }
 
 // --- SNAKE BORDER ANIMATION ---
 function initSnakeBorderAnimation() {
   const aboutSection = document.querySelector('.about-section');
-  const snakeButton = document.querySelector('.snake-border-btn');
-  const borderSegments = document.querySelectorAll('.border-segment');
-  const letters = document.querySelectorAll('.about-background-text .letter');
-  
-  console.log('=== SNAKE ANIMATION DEBUG ===');
-  console.log('About section found:', !!aboutSection);
-  console.log('Snake button found:', !!snakeButton);
-  console.log('Border segments found:', borderSegments.length);
-  console.log('Letters found:', letters.length);
-  
-  if (snakeButton) {
-    console.log('Snake button HTML:', snakeButton.outerHTML.substring(0, 200));
-  }
   
   if (!aboutSection) {
-    console.log('About section not found - aborting');
     return;
   }
   
-  // Force trigger for testing (remove this later)
-  console.log('Force triggering animation for testing...');
-  setTimeout(() => {
-    aboutSection.classList.add('animate');
-    console.log('Animation class added manually for testing');
-  }, 2000);
+  // Reset animation state
+  aboutSection.classList.remove('animate');
   
   const observerOptions = {
-    threshold: 0.1,  // Lower threshold for easier triggering
+    threshold: 0.1,
     rootMargin: '0px'
   };
   
-  const observer = new IntersectionObserver((entries) => {
+  aboutAnimationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      console.log('Intersection entry:', {
-        isIntersecting: entry.isIntersecting,
-        intersectionRatio: entry.intersectionRatio,
-        target: entry.target.className
-      });
-      
       if (entry.isIntersecting) {
-        console.log('🎯 About section in view - triggering animation!');
         entry.target.classList.add('animate');
-        
-        setTimeout(() => {
-          console.log('✅ Animation class confirmed:', entry.target.classList.contains('animate'));
-          const animatedSegments = document.querySelectorAll('.about-section.animate .border-segment');
-          console.log('Animated border segments:', animatedSegments.length);
-        }, 100);
-        
-        observer.unobserve(entry.target);
+        aboutAnimationObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
   
-  observer.observe(aboutSection);
+  aboutAnimationObserver.observe(aboutSection);
 }
 
 // --- TEAM BACKGROUND ANIMATION ---
 function initTeamBackgroundAnimation() {
   const teamSection = document.querySelector('.team-section');
-  const letters = document.querySelectorAll('.team-section .team-letter');
-  
-  console.log('=== TEAM ANIMATION DEBUG ===');
-  console.log('Team section found:', !!teamSection);
-  console.log('Team letters found:', letters.length);
   
   if (!teamSection) {
-    console.log('Team section not found - aborting');
     return;
   }
+  
+  // Reset animation state
+  teamSection.classList.remove('animate');
   
   const observerOptions = {
     threshold: 0.2,
     rootMargin: '0px'
   };
   
-  const observer = new IntersectionObserver((entries) => {
+  teamAnimationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      console.log('Team section intersection:', {
-        isIntersecting: entry.isIntersecting,
-        intersectionRatio: entry.intersectionRatio
-      });
-      
       if (entry.isIntersecting) {
-        console.log('🎯 Team section in view - triggering animation!');
         entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
+        teamAnimationObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
   
-  observer.observe(teamSection);
+  teamAnimationObserver.observe(teamSection);
 }
 
 // --- ABOUT BACKGROUND ANIMATION ---
 function initAboutBackgroundAnimation() {
-  const aboutSection = document.querySelector('.about-section');
-  const letters = document.querySelectorAll('.about-background-text .letter');
-  
-  console.log('=== ABOUT BACKGROUND ANIMATION DEBUG ===');
-  console.log('About section found:', !!aboutSection);
-  console.log('About letters found:', letters.length);
-  
-  if (!aboutSection || letters.length === 0) {
-    console.log('About section or letters not found - aborting');
-    return;
-  }
-  
-  // Force trigger the animation immediately for testing
-  setTimeout(() => {
-    console.log('🎯 Force triggering ABOUT background text animation!');
-    aboutSection.classList.add('animate');
-    
-    // Verify letters are animating
-    setTimeout(() => {
-      letters.forEach((letter, index) => {
-        const style = window.getComputedStyle(letter);
-        console.log(`Letter ${index + 1}: opacity=${style.opacity}, transform=${style.transform}`);
-      });
-    }, 200);
-  }, 1000);
-  
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      console.log('About section background text intersection:', {
-        isIntersecting: entry.isIntersecting,
-        intersectionRatio: entry.intersectionRatio
-      });
-      
-      if (entry.isIntersecting) {
-        console.log('🎯 About section background in view - triggering animation!');
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  
-  observer.observe(aboutSection);
+  // This function is now handled by initSnakeBorderAnimation()
+  // to prevent duplicate observers on the same element
 }
 
 // --- ADAPTIVE NAVIGATION COLORS ---
