@@ -3,6 +3,11 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Add loaded class to prevent FOUC after a short delay
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 50);
+  
   // Skip intro animation - start directly with main content
   initProjectSlideshow(); // Start slideshow immediately
 
@@ -78,16 +83,22 @@ function initProjectSlideshow() {
 
     slides[index].classList.add('active');
     
-    // Trigger animation after a brief delay
-    setTimeout(() => {
-      slides[index].classList.add('animate');
-    }, 100);
+    // Only trigger animation after body has 'loaded' class
+    const triggerAnimation = () => {
+      if (document.body.classList.contains('loaded')) {
+        slides[index].classList.add('animate');
+      } else {
+        setTimeout(triggerAnimation, 50);
+      }
+    };
+    
+    setTimeout(triggerAnimation, 100);
     
     if (navItems[index]) {
       navItems[index].classList.add('active');
       const progressFill = navItems[index].querySelector('.progress-fill');
       if (progressFill) {
-        setTimeout(() => { progressFill.style.animation = 'progressFill 6.5s linear'; }, 50);
+        setTimeout(() => { progressFill.style.animation = 'progressFill 6.5s linear'; }, 150);
       }
     }
   }

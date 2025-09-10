@@ -223,6 +223,35 @@
       cursor: default;
     }
     
+    /* Fix FOUC - prevent animation flash */
+    body:not(.loaded) .title-word {
+      visibility: hidden !important;
+    }
+    
+    /* Fix navigation link blue flash */
+    .minimal-nav a {
+      color: white !important;
+      text-decoration: none !important;
+    }
+    
+    /* Ensure proper initial state for animations */
+    .title-word {
+      display: block;
+      color: white;
+      opacity: 0;
+      transform: translateX(-100px);
+      visibility: visible;
+    }
+    
+    .title-word.accent {
+      color: #c9a96e;
+      font-style: italic;
+    }
+    
+    .title-word:nth-child(2) {
+      transform: translateX(100px);
+    }
+    
     .minimal-nav {
       position: fixed;
       top: 0;
@@ -262,7 +291,7 @@
     .modern-hamburger .line {
       width: 60px;
       height: 2px;
-      background: #ffffff;
+      background: #ffffff !important;
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transform-origin: center;
     }
