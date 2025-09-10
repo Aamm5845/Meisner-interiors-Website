@@ -3,18 +3,8 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Add loaded class to prevent FOUC after a short delay
-  setTimeout(() => {
-    document.body.classList.add('loaded');
-  }, 50);
-  
-  // Skip intro animation - start directly with main content
-  initProjectSlideshow(); // Start slideshow immediately
-
-  // Initialize logo click functionality
+  // Initialize other website functionalities first
   initLogoClick();
-
-  // Initialize other website functionalities.
   initNavigation();
   initHamburgerMenu();
   initAdaptiveNavigation(); // Add adaptive navigation
@@ -24,18 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScrolling();
   initScrollEffects();
   
-  // Custom cursor disabled - using standard cursor everywhere
-  // if (window.location.pathname === '/' || 
-  //     window.location.pathname.includes('index.html') || 
-  //     window.location.pathname === '' || 
-  //     window.location.pathname.endsWith('/')) {
-  //   initCustomCursor();
-    initServicePanels();
-  // }
+  initServicePanels();
   
   preloadImages(); // Preload images after DOM is ready
   manageFocus(); // Set up accessibility focus management
   initScrollAnimations(); // Initialize scroll animations
+});
+
+// Wait for all resources to load before starting slideshow
+// This ensures consistent behavior between local and hosted versions
+window.addEventListener('load', () => {
+  // Start slideshow after everything is loaded
+  setTimeout(() => {
+    initProjectSlideshow();
+  }, 100);
 });
 
 // --- LOGO CLICK: go to homepage ---
@@ -83,16 +75,10 @@ function initProjectSlideshow() {
 
     slides[index].classList.add('active');
     
-    // Only trigger animation after body has 'loaded' class
-    const triggerAnimation = () => {
-      if (document.body.classList.contains('loaded')) {
-        slides[index].classList.add('animate');
-      } else {
-        setTimeout(triggerAnimation, 50);
-      }
-    };
-    
-    setTimeout(triggerAnimation, 100);
+    // Trigger animation after a brief delay
+    setTimeout(() => {
+      slides[index].classList.add('animate');
+    }, 200);
     
     if (navItems[index]) {
       navItems[index].classList.add('active');

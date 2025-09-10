@@ -223,33 +223,10 @@
       cursor: default;
     }
     
-    /* Fix FOUC - prevent animation flash */
-    body:not(.loaded) .title-word {
-      visibility: hidden !important;
-    }
-    
-    /* Fix navigation link blue flash */
+    /* Fix navigation link blue flash only */
     .minimal-nav a {
       color: white !important;
       text-decoration: none !important;
-    }
-    
-    /* Ensure proper initial state for animations */
-    .title-word {
-      display: block;
-      color: white;
-      opacity: 0;
-      transform: translateX(-100px);
-      visibility: visible;
-    }
-    
-    .title-word.accent {
-      color: #c9a96e;
-      font-style: italic;
-    }
-    
-    .title-word:nth-child(2) {
-      transform: translateX(100px);
     }
     
     .minimal-nav {
