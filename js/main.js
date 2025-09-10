@@ -814,12 +814,17 @@ function initCustomCursor() {
 function initServicePanels() {
   const portfolioPanels = document.querySelectorAll('.portfolio-panel');
   
+  console.log('Found portfolio panels:', portfolioPanels.length);
+  
   portfolioPanels.forEach(panel => {
     panel.addEventListener('click', function() {
       const category = this.getAttribute('data-category');
+      console.log('Portfolio panel clicked:', category);
       if (category === 'residential' || category === 'commercial' || category === 'communal') {
+        const targetUrl = `portfolio.html?filter=${category}`;
+        console.log('Navigating to:', targetUrl);
         // Navigate to portfolio page with category filter
-        window.location.href = `portfolio.html?filter=${category}`;
+        window.location.href = targetUrl;
       }
     });
   });

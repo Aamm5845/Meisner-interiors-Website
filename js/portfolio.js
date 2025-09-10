@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function filterProjects(category) {
+        console.log('filterProjects called with category:', category);
         // Add filtering class for animation
         projectShowcases.forEach(project => {
             project.classList.add('filtering');
@@ -58,16 +59,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const filterParam = urlParams.get('filter');
     
+    console.log('Portfolio page loaded with filter:', filterParam);
+    console.log('Found tab buttons:', tabButtons.length);
+    console.log('Found project showcases:', projectShowcases.length);
+    
     if (filterParam && ['residential', 'commercial', 'communal'].includes(filterParam)) {
+        console.log('Applying filter:', filterParam);
         // Set active tab based on URL parameter
         tabButtons.forEach(btn => btn.classList.remove('active'));
         const targetTab = document.querySelector(`[data-category="${filterParam}"]`);
+        console.log('Target tab found:', targetTab);
         if (targetTab) {
             targetTab.classList.add('active');
         }
         // Apply the filter
         filterProjects(filterParam);
     } else {
+        console.log('No valid filter parameter, showing all');
         // Initialize - show all projects by default
         filterProjects('all');
     }
