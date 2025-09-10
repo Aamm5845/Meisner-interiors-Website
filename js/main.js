@@ -3,23 +3,68 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize other website functionalities first
-  initLogoClick();
-  initNavigation();
-  initHamburgerMenu();
-  initAdaptiveNavigation(); // Add adaptive navigation
-  if (document.querySelector('.hero-slider')) initHeroSlider();
-  if (document.querySelector('.portfolio-filter')) initPortfolioFilter();
-  if (document.querySelector('.contact-form-fields')) initContactForm();
-  initSmoothScrolling();
-  initScrollEffects();
-  
-  initServicePanels();
-  
-  preloadImages(); // Preload images after DOM is ready
-  manageFocus(); // Set up accessibility focus management
-  initScrollAnimations(); // Initialize scroll animations
+  // Wait for CSS to load before enabling animations
+  waitForCSSLoaded().then(() => {
+    document.body.classList.add('css-loaded');
+    
+    // Now initialize everything
+    initLogoClick();
+    initNavigation();
+    initHamburgerMenu();
+    initAdaptiveNavigation();
+    if (document.querySelector('.hero-slider')) initHeroSlider();
+    if (document.querySelector('.portfolio-filter')) initPortfolioFilter();
+    if (document.querySelector('.contact-form-fields')) initContactForm();
+    initSmoothScrolling();
+    initScrollEffects();
+    
+    initServicePanels();
+    
+    preloadImages();
+    manageFocus();
+    initScrollAnimations();
+  });
 });
+
+// Function to detect when CSS is fully loaded
+function waitForCSSLoaded() {
+  return new Promise((resolve) => {
+    const stylesheets = document.querySelectorAll('link[rel="stylesheet"], link[rel="preload"][as="style"]');
+    let loadedCount = 0;
+    const totalCount = stylesheets.length;
+    
+    if (totalCount === 0) {
+      resolve();
+      return;
+    }
+    
+    stylesheets.forEach(sheet => {
+      if (sheet.sheet || sheet.rel === 'preload') {
+        loadedCount++;
+        if (loadedCount >= totalCount) {
+          setTimeout(resolve, 100); // Small delay for safety
+        }
+      } else {
+        sheet.addEventListener('load', () => {
+          loadedCount++;
+          if (loadedCount >= totalCount) {
+            setTimeout(resolve, 100);
+          }
+        });
+        
+        sheet.addEventListener('error', () => {
+          loadedCount++;
+          if (loadedCount >= totalCount) {
+            setTimeout(resolve, 100);
+          }
+        });
+      }
+    });
+    
+    // Fallback timeout
+    setTimeout(resolve, 2000);
+  });
+}
 
 // Wait for all resources to load before starting slideshow
 // This ensures consistent behavior between local and hosted versions
