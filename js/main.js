@@ -818,7 +818,8 @@ function initServicePanels() {
     panel.addEventListener('click', function() {
       const category = this.getAttribute('data-category');
       if (category === 'residential' || category === 'commercial' || category === 'communal') {
-        window.location.href = 'portfolio.html';
+        // Navigate to portfolio page with category filter
+        window.location.href = `portfolio.html?filter=${category}`;
       }
     });
   });

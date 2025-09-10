@@ -54,8 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     }
 
-    // Initialize - show all projects by default
-    filterProjects('all');
+    // Check for URL parameters to filter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+    
+    if (filterParam && ['residential', 'commercial', 'communal'].includes(filterParam)) {
+        // Set active tab based on URL parameter
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        const targetTab = document.querySelector(`[data-category="${filterParam}"]`);
+        if (targetTab) {
+            targetTab.classList.add('active');
+        }
+        // Apply the filter
+        filterProjects(filterParam);
+    } else {
+        // Initialize - show all projects by default
+        filterProjects('all');
+    }
     
     // Trigger portfolio background text animation on page load
     setTimeout(() => {
