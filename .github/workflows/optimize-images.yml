@@ -1,6 +1,5 @@
 name: Optimize images
 
-# 👇 Give the workflow permission to push and open PRs
 permissions:
   contents: write
   pull-requests: write
@@ -18,9 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0      # 👈 full history avoids git errors when creating branches
+          fetch-depth: 0
 
       - name: Optimize images
         uses: calibreapp/image-actions@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}   # ← only here, not in env
