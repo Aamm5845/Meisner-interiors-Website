@@ -14,12 +14,13 @@ jobs:
   optimize:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (no submodules)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          submodules: false
 
       - name: Optimize images
         uses: calibreapp/image-actions@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}   # ← only here, not in env
+          token: ${{ secrets.GITHUB_TOKEN }}
