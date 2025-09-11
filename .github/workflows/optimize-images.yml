@@ -1,16 +1,24 @@
 name: Optimize images
 
+# 👇 Give the workflow permission to push and open PRs
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   push:
-    branches: [main]     # run automatically on every push to main
-  pull_request:          # run when someone opens a PR
-  workflow_dispatch:     # allow manual trigger
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   optimize:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0      # 👈 full history avoids git errors when creating branches
 
       - name: Optimize images
         uses: calibreapp/image-actions@main
