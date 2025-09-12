@@ -69,18 +69,11 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
   <link rel="manifest" href="assets/site.webmanifest">
   
-  <!-- Webmaster Verification Meta Tags -->
-  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
-  <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
-  <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE">
-  <meta name="p:domain_verify" content="YOUR_PINTEREST_VERIFICATION_CODE">
-  
   <!-- Preconnect to external domains for performance -->
   <link rel="preconnect" href="https://www.google-analytics.com">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -150,7 +143,8 @@
   <noscript><link rel="stylesheet" href="css/style.css?v=20250110"></noscript>
   <link rel="preload" href="css/protection.css?v=20250110" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/protection.css?v=20250110"></noscript>
-  <!-- Optimized Icon Subset - Inline for performance -->
+  
+  <!-- Font Awesome - Using only the optimized inline version -->
   <style>
     /* Optimized icon subset - only used icons */
     @font-face {
@@ -158,6 +152,14 @@
       font-style: normal;
       font-weight: 900;
       font-display: swap;
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
     }
     .fas { font-family: "Font Awesome 6 Free"; font-weight: 900; }
     .fa-chevron-down:before { content: "\f078"; }
@@ -166,8 +168,6 @@
     .fa-envelope:before { content: "\f0e0"; }
     .fa-phone:before { content: "\f095"; }
     .fa-map-marker-alt:before { content: "\f3c5"; }
-    .fa-instagram:before { content: "\f16d"; }
-    .fa-linkedin-in:before { content: "\f0e1"; }
     .fa-drafting-compass:before { content: "\f568"; }
     .fa-cube:before { content: "\f1b2"; }
     .fa-clipboard-list:before { content: "\f46d"; }
@@ -183,35 +183,15 @@
     .fa-instagram:before { content: "\f16d"; }
     .fa-linkedin-in:before { content: "\f0e1"; }
   </style>
-  
-  <!-- Full Font Awesome CDN for all icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Enhanced Critical CSS -->
   <style>
-    /* Optimize font loading performance */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 300 600;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZhrib2Bg-4.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    @font-face {
-      font-family: 'Playfair Display';
-      font-style: normal;
-      font-weight: 300 700;
-      font-display: swap;
-      src: url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXBYf9lWAe7iU.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    
-    /* Critical CSS for Above-the-fold Content */
+    /* Base styles */
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -327,6 +307,64 @@
       display: block;
       opacity: 0;
       transition: opacity 1s ease;
+    }
+    
+    /* Enhanced critical styles */
+    .project-showcase, .about-section, .portfolio-categories {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .css-loaded .project-showcase,
+    .css-loaded .about-section, 
+    .css-loaded .portfolio-categories {
+      opacity: 1;
+    }
+    
+    /* Prevent FOUT (Flash of Unstyled Text) */
+    body:not(.fonts-loaded) {
+      visibility: hidden;
+    }
+    
+    body.fonts-loaded {
+      visibility: visible;
+    }
+    
+    /* Basic layout styles to prevent CLS */
+    .project-slide {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+    
+    .project-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .project-content {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      color: white;
+      z-index: 10;
+    }
+    
+    /* Basic button styles */
+    .discover-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      color: #c9a96e;
+      border: 1px solid #c9a96e;
+      text-decoration: none;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
     }
   </style>
   
@@ -489,45 +527,11 @@
     ]
   }
   </script>
-  
-  <!-- Google Analytics 4 (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GA_MEASUREMENT_ID', {
-      'send_page_view': true,
-      'anonymize_ip': true,
-      'allow_google_signals': false,
-      'allow_ad_personalization_signals': false
-    });
-    
-    // Enhanced eCommerce and Events
-    gtag('config', 'GA_MEASUREMENT_ID', {
-      'custom_map': {
-        'custom_parameter_1': 'page_type',
-        'custom_parameter_2': 'user_type'
-      }
-    });
-  </script>
-  
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 </head>
 
 <body class="homepage">
   <!-- Skip Navigation Link for Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   
   <!-- Logo intro removed for better performance and UX -->
 
@@ -543,7 +547,7 @@
             .nav-cls-2 { stroke: #fff; stroke-width: 3.23px; stroke-miterlimit: 10; fill: none; }
           </style>
         </defs>
-        <path class="nav-cls-2" d="m83.67,13.95c-13.15,0-24.58,4.38-33.96,13.03l-.48.44-.48-.44c-9.31-8.42-20.61-12.69-33.58-12.69H1.62v97.44h13.55c4.11,0,8.12-.44,11.92-1.3l-1.22-2.62c-3.41.74-7,1.11-10.7,1.11H4.65V17.1h10.52c12.13,0,22.72,3.99,31.48,11.87l.54.49-.5.53c-8.92,9.51-13.44,20.5-13.44,32.68,0,7.26,1.61,14.15,4.78,20.46,2.21,4.39,5.24,8.63,9.01,12.58l.3.32c.19.2.37.4.57.59.51.52,1.07,1.05,1.69,1.63.46-.43.9-.86,1.32-1.28.36-.36.69-.72,1.03-1.08l.18-.2c3.71-3.95,6.68-8.18,8.83-12.55,3.06-6.21,4.61-12.99,4.61-20.13,0-12.33-4.64-23.45-13.79-33.05l-.5-.53.54-.49c8.83-8.08,19.54-12.18,31.84-12.18h10.52v94.62h3.04V13.95h-13.56Zm-21.12,49.06c0,7.44-1.76,14.43-5.24,20.79-1.88,3.43-4.3,6.75-7.2,9.86l-.52.55-.52-.55c-2.96-3.13-5.43-6.44-7.34-9.86-3.6-6.44-5.43-13.55-5.43-21.13,0-11.47,4.19-21.78,12.44-30.64l.52-.55.52.55c8.47,8.95,12.77,19.37,12.77,30.99Z"/>
+        <path class="nav-cls-2" d="m83.67,13.95c-13.15,0-24.58,4.38-33.96,13.03l-.48.44-.48-.44c-9.31-8.42-20.61-12.69-33.58-12.69H1.62v97.44h13.55c4.11,0,8.12-.44,11.92-1.3l-1.22-2.62c-3.41.74-7,1.11-10.7,1.11H4.65V17.1h10.52c12.13,0,22.72,3.99,31.48,11.87l.54.49-.5.53c-8.92,9.51-13.44,20.5-13.44,32.68,0,7.26,1.61,14.15,4.78,20.46,2.21,4.39,5.24,8.63,9.01,12.58l.30.32c.19.20.37.40.57.59.51.52,1.07,1.05,1.69,1.63.46-.43.90-.86,1.32-1.28.36-.36.69-.72,1.03-1.08l.18-.20c3.71-3.95,6.68-8.18,8.83-12.55,3.06-6.21,4.61-12.99,4.61-20.13,0-12.33-4.64-23.45-13.79-33.05l-.50-.53.54-.49c8.83-8.08,19.54-12.18,31.84-12.18h10.52v94.62h3.04V13.95h-13.56Zm-21.12,49.06c0,7.44-1.76,14.43-5.24,20.79-1.88,3.43-4.30,6.75-7.20,9.86l-.52.55-.52-.55c-2.96-3.13-5.43-6.44-7.34-9.86-3.60-6.44-5.43-13.55-5.43-21.13,0-11.47,4.19-21.78,12.44-30.64l.52-.55.52.55c8.47,8.95,12.77,19.37,12.77,30.99Z"/>
           <circle class="nav-cls-1" cx="49.42" cy="9.53" r="7.03"/>
         </svg>
       </a>
@@ -565,7 +569,8 @@
       <div class="project-slider">
         <!-- Project 1: Meridian -->
         <div class="project-slide active" data-project="1">
-          <div class="project-background" style="background-image: url('images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg');" role="img" aria-label="Luxury master bedroom interior design by Meisner Interiors"></div>
+          <!-- Using data attributes for lazy loading -->
+          <div class="project-background" data-bg="images/MASTER%20BEDROOM%20IMG%2001%20061925.jpg" role="img" aria-label="Luxury master bedroom interior design by Meisner Interiors"></div>
           <div class="project-overlay"></div>
           <div class="project-content">
             <div class="project-counter">01 / 03</div>
@@ -579,7 +584,7 @@
 
         <!-- Project 2: Solace -->
         <div class="project-slide" data-project="2">
-          <div class="project-background" style="background-image: url('images/booth%202.jpg');" role="img" aria-label="Commercial design excellence - exhibition booth by Meisner Interiors"></div>
+          <div class="project-background" data-bg="images/booth%202.jpg" role="img" aria-label="Commercial design excellence - exhibition booth by Meisner Interiors"></div>
           <div class="project-overlay"></div>
           <div class="project-content">
             <div class="project-counter">02 / 03</div>
@@ -593,7 +598,7 @@
 
         <!-- Project 3: Reverie -->
         <div class="project-slide" data-project="3">
-          <div class="project-background" style="background-image: url('images/booth%201.jpg');" role="img" aria-label="Corporate design solutions - professional exhibition space by Meisner Interiors"></div>
+          <div class="project-background" data-bg="images/booth%201.jpg" role="img" aria-label="Corporate design solutions - professional exhibition space by Meisner Interiors"></div>
           <div class="project-overlay"></div>
           <div class="project-content">
             <div class="project-counter">03 / 03</div>
@@ -656,27 +661,25 @@
       </div>
     </section>
 
-
-    <!-- Section 3: Portfolio Categories -->
     <!-- Section 3: Portfolio Categories -->
     <section class="portfolio-categories section-standard">
       <div class="portfolio-panels">
         <div class="portfolio-panel" data-category="residential">
-          <div class="panel-background" style="background-image: url('images/light.jpg');"></div>
+          <div class="panel-background" data-bg="images/light.jpg"></div>
           <div class="panel-overlay"></div>
           <div class="panel-content">
             <h3 class="panel-title">Residential</h3>
           </div>
         </div>
         <div class="portfolio-panel" data-category="commercial">
-          <div class="panel-background" style="background-image: url('images/Playground%201%20s.jpg'); background-position: center 25%;"></div>
+          <div class="panel-background" data-bg="images/Playground%201%20s.jpg" style="background-position: center 25%;"></div>
           <div class="panel-overlay"></div>
           <div class="panel-content">
             <h3 class="panel-title">Commercial</h3>
           </div>
         </div>
         <div class="portfolio-panel" data-category="communal">
-          <div class="panel-background" style="background-image: url('images/Ballroom.jpg');"></div>
+          <div class="panel-background" data-bg="images/Ballroom.jpg"></div>
           <div class="panel-overlay"></div>
           <div class="panel-content">
             <h3 class="panel-title">Communal</h3>
@@ -704,7 +707,7 @@
         <div class="team-grid">
           <div class="team-member">
             <div class="member-photo">
-              <img src="images/Me%20profile.jpg" alt="Aaron Meisner - CEO">
+              <img src="images/Me%20profile.jpg" alt="Aaron Meisner - CEO" loading="lazy">
               <div class="member-overlay">
                 <h3 class="member-name">Aaron Meisner</h3>
                 <p class="member-title">Principal Interior Designer</p>
@@ -713,7 +716,7 @@
           </div>
           <div class="team-member">
             <div class="member-photo">
-              <img src="images/Shaya%20profile.png" alt="Shaya Gross - Project Manager">
+              <img src="images/Shaya%20profile.png" alt="Shaya Gross - Project Manager" loading="lazy">
               <div class="member-overlay">
                 <h3 class="member-name">Shaya Gross</h3>
                 <p class="member-title">Project Manager</p>
@@ -722,7 +725,7 @@
           </div>
           <div class="team-member">
             <div class="member-photo">
-              <img src="images/Sami%20profile.jpeg" alt="Sami Youssef - Drafting & Site Lead">
+              <img src="images/Sami%20profile.jpeg" alt="Sami Youssef - Drafting & Site Lead" loading="lazy">
               <div class="member-overlay">
                 <h3 class="member-name">Sami Youssef</h3>
                 <p class="member-title">Drafting & Site Lead</p>
@@ -731,7 +734,7 @@
           </div>
           <div class="team-member">
             <div class="member-photo">
-              <img src="images/Vitor%20profile.jpeg" alt="Manoel Vitor - Designer & 3D Artist">
+              <img src="images/Vitor%20profile.jpeg" alt="Manoel Vitor - Designer & 3D Artist" loading="lazy">
               <div class="member-overlay">
                 <h3 class="member-name">Manoel Vitor</h3>
                 <p class="member-title">Designer & 3D Artist</p>
@@ -802,7 +805,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -826,43 +828,98 @@
         <a href="about.html" class="mobile-nav-link">About</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
       </nav>
-
     </div>
   </div>
 
-  <!-- Hamburger menu functionality handled by main.js -->
-  
   <!-- JavaScript - Async loading -->
   <script src="js/protection.js?v=20250110" defer></script>
   <script src="js/main.js?v=20250110" defer></script>
-<script>
-  // HARD FAILSAFE: if JS didn't run, force-reveal after 5s
-  window.addEventListener('DOMContentLoaded', function () {
+  
+  <!-- Enhanced Loading Script -->
+  <script>
+    // Enhanced loading strategy
+    document.documentElement.classList.remove('no-js');
+    
+    // Font loading detection
+    if ('fonts' in document) {
+      document.fonts.ready.then(function() {
+        document.body.classList.add('fonts-loaded');
+      });
+    } else {
+      // Fallback for browsers that don't support the Font Loading API
+      setTimeout(function() {
+        document.body.classList.add('fonts-loaded');
+      }, 1000);
+    }
+    
+    // CSS loading detection
+    window.addEventListener('load', function() {
+      document.body.classList.add('css-loaded');
+      
+      // Remove the 5-second failsafe or make it a true last resort
+      const animationFailSafe = setTimeout(function() {
+        if (!document.body.classList.contains('animation-complete')) {
+          document.body.classList.add('animation-complete');
+          const logoScreen = document.querySelector('.logo-animation-screen');
+          if (logoScreen) {
+            logoScreen.style.opacity = '0';
+            logoScreen.style.visibility = 'hidden';
+          }
+        }
+      }, 5000);
+      
+      // Cancel the failsafe if animation completes normally
+      if (document.body.classList.contains('animation-complete')) {
+        clearTimeout(animationFailSafe);
+      }
+      
+      // Initialize lazy loading for background images
+      initLazyLoading();
+    });
+    
     // Always show the logo immediately
-    var logo = document.querySelector('#main-logo img');
-    if (logo) {
-      logo.style.opacity = '1';
-      logo.style.transition = 'none';
-    }
-
-    // Try to run the real intro if available
-    if (typeof runIntro === 'function') {
-      runIntro();
-    }
-
-    // Failsafe: reveal site no matter what after 5s
-    setTimeout(function () {
-      document.body.classList.add('animation-complete');
-      var logoScreen = document.querySelector('.logo-animation-screen');
-      if (logoScreen) {
-        logoScreen.style.opacity = '0';
-        logoScreen.style.visibility = 'hidden';
+    document.addEventListener('DOMContentLoaded', function() {
+      var logo = document.querySelector('#main-logo img');
+      if (logo) {
+        logo.style.opacity = '1';
+        logo.style.transition = 'none';
       }
-      if (typeof initProjectSlideshow === 'function') {
-        initProjectSlideshow();
+
+      // Try to run the real intro if available
+      if (typeof runIntro === 'function') {
+        runIntro();
       }
-    }, 5000);
-  });
-</script>
+    });
+    
+    // Lazy loading for background images
+    function initLazyLoading() {
+      const lazyBackgrounds = document.querySelectorAll('[data-bg]');
+      
+      if ('IntersectionObserver' in window) {
+        const lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const bgElement = entry.target;
+              const bgUrl = bgElement.getAttribute('data-bg');
+              bgElement.style.backgroundImage = `url('${bgUrl}')`;
+              bgElement.removeAttribute('data-bg');
+              lazyBackgroundObserver.unobserve(bgElement);
+            }
+          });
+        });
+        
+        lazyBackgrounds.forEach(function(bgElement) {
+          lazyBackgroundObserver.observe(bgElement);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyBackgrounds.forEach(function(bgElement) {
+          const bgUrl = bgElement.getAttribute('data-bg');
+          bgElement.style.backgroundImage = `url('${bgUrl}')`;
+          bgElement.removeAttribute('data-bg');
+        });
+      }
+    }
+  </script>
 </body>
 </html>
